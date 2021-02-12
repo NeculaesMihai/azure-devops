@@ -7,6 +7,7 @@ resources:
     endpoint: adriansuhov
     name: adriansuhov/azure-functions-1
     trigger:
+      batch: true
       branches:
         include:
         - main
@@ -16,6 +17,7 @@ resources:
     endpoint: adriansuhov
     name: adriansuhov/azure-functions-2
     trigger:
+      batch: true
       branches:
         include:
         - main
@@ -25,6 +27,7 @@ resources:
     type: github
     name: adriansuhov/azure-functions-3
     trigger:
+      batch: true
       branches:
         include:
         - main
@@ -33,7 +36,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- checkout: self
 - checkout: EZWM
 - checkout: Customer
 - checkout: Convacloud
