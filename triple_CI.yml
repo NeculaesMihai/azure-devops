@@ -1,4 +1,6 @@
 # This is a POC for a triple solution pipeline
+trigger:
+  - main
 
 resources:
   repositories:
