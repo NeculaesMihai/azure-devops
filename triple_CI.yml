@@ -1,8 +1,26 @@
-trigger:
-- master
+# This is a POC for a triple solution pipeline
+
+trigger: none
+resources:
+  repositories:
+  - repository: EZWM
+    type: github
+    endpoint: adriansuhov
+    name: adriansuhov/azure-functions-1
+  - repository: Customer
+    type: github
+    endpoint: adriansuhov
+    name: adriansuhov/azure-functions-2
+  - repository: Convacloud
+    endpoint: adriansuhov
+    type: github
+    name: adriansuhov/azure-functions-3
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NuGetToolInstaller@0
+- checkout: self
+- checkout: EZWM
+- checkout: Customer
+- checkout: Convacloud
