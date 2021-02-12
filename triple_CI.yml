@@ -34,6 +34,12 @@ resources:
         include:
         - main
 
+  pipelines:
+    - pipeline: TriggerPipeline
+      source: Convatec-POC
+      trigger:
+        branches:
+        - main 
 pool:
   vmImage: 'ubuntu-latest'
 
