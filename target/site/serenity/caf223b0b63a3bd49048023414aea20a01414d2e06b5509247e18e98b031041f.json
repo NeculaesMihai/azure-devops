@@ -1,0 +1,116 @@
+{
+  "name": "Cancel prescription reservation without access token",
+  "id": "odt-616-cancelprescriptionreservation;cancel-prescription-reservation-without-access-token",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 2,
+      "startTime": "2021-01-21T09:32:33.197Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:33.199Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the cancelPrescriptionReservation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:33.200Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the access token is empty",
+      "duration": 4,
+      "startTime": "2021-01-21T09:32:33.201Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "When the user performs a POST request on cancelPrescriptionReservation",
+      "duration": 239,
+      "startTime": "2021-01-21T09:32:33.205Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 6,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/cancelPrescriptionReservation",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:33.444Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/cancelPrescriptionReservation",
+            "content": "{\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\",\n    \"internalRequest\": {\n        \"typ-nad\": \"S\",\n        \"ow-nad\": \"07\",\n        \"id-nad\": \"70061628\",\n        \"id-inst-nad\": \"Softlab ERP\",\n        \"id-tech-dokumentu\": \"41060e4f-e211-4a1f-a74a-af7a0598733b\",\n        \"nr-wersji\": \"17\",\n        \"data-gen\": \"2021-01-21T09:32:33.200\",\n        \"zlecenie\": {\n            \"nr-zlecenia-nfz\": \"T1-20-000101269-7\",\n            \"dane-wycofania\": {\n                \"data-wycofania\": \"2021-01-21\",\n                \"czesciowa-realizacja\": \"T\",\n                \"przyczyna\": \"Rezygnacja\",\n                \"mies-wycofania\": {\n                    \"mies-od\": \"2021-01\",\n                    \"lb-mies\": \"1\"\n                },\n                \"podmiot-wycofujacy\": {\n                    \"nazwa\": \"CONVATEC POLSKA SP. Z O.O.\",\n                    \"regon\": \"141437294\",\n                    \"swd\": {\n                        \"ow-nfz\": \"07\",\n                        \"kod-swd\": \"70061628\"\n                    }\n                }\n            }\n        }\n    }\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Content-Length: 60\nContent-Type: application/json\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:32:32 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"statusCode\": 401,\n    \"message\": \"Token invalid or missing\"\n}",
+            "statusCode": 401
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then the status code is 401",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:33.445Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-616-cancelprescriptionreservation",
+    "storyName": "ODT-616-CancelPrescriptionReservation",
+    "path": "prescriptionRealisation/ODT-616-CancelPrescriptionReservation.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-616-CancelPrescriptionReservation",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-616-CancelPrescriptionReservation"
+  },
+  "title": "Cancel prescription reservation without access token",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation/ODT-616-CancelPrescriptionReservation",
+      "type": "feature",
+      "displayName": "ODT-616-CancelPrescriptionReservation"
+    },
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:33.194Z[Etc/UTC]",
+  "duration": 260,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

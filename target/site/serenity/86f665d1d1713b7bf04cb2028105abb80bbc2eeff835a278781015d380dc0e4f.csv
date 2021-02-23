@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"ODT-616-CancelPrescriptionReservation","Cancel prescription reservation without subscription token","SUCCESS","2021-01-21T09:32:32.939Z[Etc/UTC]","0.0","0.25"
+"ODT-616-CancelPrescriptionReservation","Cancel prescription reservation without access token","SUCCESS","2021-01-21T09:32:33.194Z[Etc/UTC]","0.0","0.26"
+"ODT-616-CancelPrescriptionReservation","Cancel prescription reservation without sysName","SUCCESS","2021-01-21T09:32:33.456Z[Etc/UTC]","0.0","1.74"
+"ODT-616-CancelPrescriptionReservation","Cancel prescription reservation without sysVersion","SUCCESS","2021-01-21T09:32:35.201Z[Etc/UTC]","0.0","0.81"

@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                    {
+                        searching: false,
+                        ordering: false,
+                        paging: false,
+                        info: false
+                    }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"ODT-615-GetPrescriptionRealisationResult","type":"feature","href":"e0e71107416923e49ba9bc0ead37e062633d8e2ae01d80a281b58f2622badfda.html","nodes":[],"selectable":false,"tags":["","\u003cspan class\u003d\u0027feature-count\u0027\u003e10 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">ODT-Test-Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="acdc3ee3e32b4e57ce35c766cb0ccd8e6b618d9f47c118cc917163c1b877a3a1.html">Prescription Realisation</a>
+
+
+                > <span class="truncate-40">ODT-615-Getprescriptionrealisationresult</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 21-01-2021 09:32</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  ODT-615-Getprescriptionrealisationresult</h2>
+                                        </span>
+                                </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="requirementNarrativeTitle">
+                                
+                            </div>
+
+                        </div>
+                    </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#fcc9cc4d0ac6b637e3cfbdf7ee92d6e333c2af9a7f9000a871e2bd8f5473f6d5" title="View scenario details" >Set credentials</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            
+                                                                            
+
+                                                                        
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#e66640c1aee4ca4cddd00e7b06bbd5a0d1eb8298b0e1fc09e43f6ea2591b905b" title="View scenario details" >Successful prescription realisation</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="961f8ae618131c6bb2c0bc1519d1a398c3d0d9836d02e4980fae6315c93db8ba.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="961f8ae618131c6bb2c0bc1519d1a398c3d0d9836d02e4980fae6315c93db8ba.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#62fd5bf63e9c7084c465a191626ce18c73ae101228981d1495a5ce3e3397ca90" title="View scenario details" >Successful prescription realisation result retrieval</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="66d7c360ac95538a7c491a6fb9889647355299a2bb7be2cc31dda255dc099914.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="66d7c360ac95538a7c491a6fb9889647355299a2bb7be2cc31dda255dc099914.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#660dbb5d6549460c56600dc375428ca20f7a6d8cf45a27fda775ea736f0c5111" title="View scenario details" >Get prescription realisation result request without subscription token</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4b2e81181c4f712f6b4956cd91eb26c740820027e890f8902e60cebcc46067e3.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="4b2e81181c4f712f6b4956cd91eb26c740820027e890f8902e60cebcc46067e3.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#c63253778c392ddc52596b2b287f1fa54e44ce04c95b93e5bdb4bc3ca6bfbd3b" title="View scenario details" >Get prescription realisation result request without access token</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="75134482e1db00d0985f0eb56d4f231dd63d08c2475729d5e82105c40d844d96.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="75134482e1db00d0985f0eb56d4f231dd63d08c2475729d5e82105c40d844d96.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#6145828bea7010993aeda9964584b81392a559e8371224dcd4e3cad7c3105d1f" title="View scenario details" >Get prescription realisation result request without prescriptionId</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="f652e600d921573b5ec984f5f6e9735a057d6f6e2696a9b99ff53066981698c9.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="f652e600d921573b5ec984f5f6e9735a057d6f6e2696a9b99ff53066981698c9.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#26714367159f62ad242c0449a5c2881496ed4228307428544b782c0b72b57fa4" title="View scenario details" >Get prescription realisation result request with invalid prescriptionId and access code combination (service exception)</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="5003e12703597dc8abaa4676a1643c9a704759ddb94fe9381a58f0a4ff6476ae.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="5003e12703597dc8abaa4676a1643c9a704759ddb94fe9381a58f0a4ff6476ae.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#9a54291a082504ff07212703487a0732ffdf39a6f58258e9622c9b9d5aebf422" title="View scenario details" >Get prescription realisation result request with invalid prescriptionId (input exception)</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="a7dd08731f3ac4d4a7cc727721d83480f36d2cd4503515805e0e0678bc2b2e07.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="a7dd08731f3ac4d4a7cc727721d83480f36d2cd4503515805e0e0678bc2b2e07.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#c1cbb6a4794281345b8e718f9f4e9123d374a0e7e3f6d10630874ab6b3e69f73" title="View scenario details" >Get prescription realisation result request without documentTechId</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="d909ae10780867539ff5de053df091fd17fb8f20153dac8ef36ef2bc93038e29.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="d909ae10780867539ff5de053df091fd17fb8f20153dac8ef36ef2bc93038e29.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#85c4ed431670c5c1c3e0364c14fb3e26d3c3c3ffd977629145aa108fb35eb401" title="View scenario details" >Get prescription realisation result request without system name</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="cc1103c15f46eb0a8a8a758efc35fb2c9a695417c992680edcc5b0f834f7f352.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="cc1103c15f46eb0a8a8a758efc35fb2c9a695417c992680edcc5b0f834f7f352.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="width:95%;" class="toc-title">
+                                                                <a href="#3746bfa01a5c467dbee1df2f97bb1dc26e09537a9e46e31f90da180988dcfe7a" title="View scenario details" >Get prescription realisation result request without system version</a>
+
+
+                                                            </td>
+                                                            <td style="width:5%;">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="875017d7bac685f726e6c64da0e67b9f1940ef61eeb821f7ecaa10cbc5d4b454.html"
+                                                                               title="View test results">
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                            </a>
+
+                                                                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                               href="875017d7bac685f726e6c64da0e67b9f1940ef61eeb821f7ecaa10cbc5d4b454.html"
+                                                                               title="View test results">
+                                                                                <i class="fas fa-search-plus"></i>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+
+                                                <div class="scenario-docs card" id="fcc9cc4d0ac6b637e3cfbdf7ee92d6e333c2af9a7f9000a871e2bd8f5473f6d5">
+                                                    <div class="scenario-docs card-header undefined" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="" title="View test results">Background: Set credentials</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <i class="fas fa-pause"
+                                                                       title="No test has been implemented yet"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p>Given the subscriptionToken is set</p>
+                                                            <p>And the accessToken is set</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="e66640c1aee4ca4cddd00e7b06bbd5a0d1eb8298b0e1fc09e43f6ea2591b905b">
+                                                    <div class="scenario-docs card-header failure" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="961f8ae618131c6bb2c0bc1519d1a398c3d0d9836d02e4980fae6315c93db8ba.html" title="View test results">Successful prescription realisation</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the setPrescriptionReservation body data</p>
+<table>
+<thead>
+<tr><th>sysName</th><th>sysName</th></tr>
+</thead>
+<tbody>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on setPrescriptionReservation</p>
+                                                            <p>Then the status code is 200</p>
+                                                            <p>And response body is matching JSON schema setPrescriptionReservation</p>
+                                                            <p>And the documentTechIdNfzReservation is saved</p>
+                                                            <p>And wait 5 seconds for validation</p>
+                                                            <p><p>Given the setPrescriptionRealisation body data</p>
+<table>
+<thead>
+<tr><th>sysName</th><th>sysName</th></tr>
+</thead>
+<tbody>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on setPrescriptionRealisation</p>
+                                                            <p>Then the status code is 200</p>
+                                                            <p>And response body is matching JSON schema setPrescriptionRealisation</p>
+                                                            <p>And the documentTechIdNfzRealisation is saved</p>
+                                                            <p>And wait 5 seconds for validation</p>
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionId</th></tr>
+</thead>
+<tbody>
+<tr><td>accessCode</td><td>accessCode</td></tr>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionStatus</p>
+                                                            <p>Then the status code is 200</p>
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionId</th></tr>
+</thead>
+<tbody>
+<tr><td>id-tech-dokumentu-nfz</td><td>id-tech-dokumentu-nfz-realisation</td></tr>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationStatus</p>
+                                                            <p>Then the status code is 200</p>
+                                                            <p>And response body is matching JSON schema getPrescriptionRealisationStatus</p>
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionId</th></tr>
+</thead>
+<tbody>
+<tr><td>id-tech-dokumentu-nfz</td><td>id-tech-dokumentu-nfz-realisation</td></tr>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code is 200</p>
+                                                            <p>And response body is matching JSON schema getPrescriptionRealisationResult</p>
+                                                            <p><p>Given the cancelPrescriptionRealisation body data</p>
+<table>
+<thead>
+<tr><th>sysName</th><th>sysName</th></tr>
+</thead>
+<tbody>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on cancelPrescriptionRealisation</p>
+                                                            <p>Then the status code is 200</p>
+                                                            <p>And response body is matching JSON schema cancelPrescriptionRealisation</p>
+                                                            <p>And wait 5 seconds for validation</p>
+                                                            <p><p>Given the cancelPrescriptionReservation body data</p>
+<table>
+<thead>
+<tr><th>sysName</th><th>sysName</th></tr>
+</thead>
+<tbody>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on cancelPrescriptionReservation</p>
+                                                            <p>Then the status code is 200</p>
+                                                            <p>And response body is matching JSON schema cancelPrescriptionReservation</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="62fd5bf63e9c7084c465a191626ce18c73ae101228981d1495a5ce3e3397ca90">
+                                                    <div class="scenario-docs card-header failure" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="66d7c360ac95538a7c491a6fb9889647355299a2bb7be2cc31dda255dc099914.html" title="View test results">Successful prescription realisation result retrieval</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionId</th></tr>
+</thead>
+<tbody>
+<tr><td>id-tech-dokumentu-nfz</td><td>id-tech-dokumentu-nfz-realisation</td></tr>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code is 200</p>
+                                                            <p>And response body is matching JSON schema getPrescriptionRealisationResult</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="660dbb5d6549460c56600dc375428ca20f7a6d8cf45a27fda775ea736f0c5111">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="4b2e81181c4f712f6b4956cd91eb26c740820027e890f8902e60cebcc46067e3.html" title="View test results">Get prescription realisation result request without subscription token</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionId</th></tr>
+</thead>
+<tbody>
+<tr><td>id-tech-dokumentu-nfz</td><td>id-tech-dokumentu-nfz-realisation</td></tr>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the subscription token is empty</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code is 401</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="c63253778c392ddc52596b2b287f1fa54e44ce04c95b93e5bdb4bc3ca6bfbd3b">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="75134482e1db00d0985f0eb56d4f231dd63d08c2475729d5e82105c40d844d96.html" title="View test results">Get prescription realisation result request without access token</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionId</th></tr>
+</thead>
+<tbody>
+<tr><td>id-tech-dokumentu-nfz</td><td>id-tech-dokumentu-nfz-realisation</td></tr>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the access token is empty</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code is 401</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="6145828bea7010993aeda9964584b81392a559e8371224dcd4e3cad7c3105d1f">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="f652e600d921573b5ec984f5f6e9735a057d6f6e2696a9b99ff53066981698c9.html" title="View test results">Get prescription realisation result request without prescriptionId</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>id-tech-dokumentu-nfz</th><th>id-tech-dokumentu-nfz-realisation</th></tr>
+</thead>
+<tbody>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code reflects client side error 4xx</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="26714367159f62ad242c0449a5c2881496ed4228307428544b782c0b72b57fa4">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="5003e12703597dc8abaa4676a1643c9a704759ddb94fe9381a58f0a4ff6476ae.html" title="View test results">Get prescription realisation result request with invalid prescriptionId and access code combination (service exception)</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionIdServiceException</th></tr>
+</thead>
+<tbody>
+<tr><td>id-tech-dokumentu-nfz</td><td>id-tech-dokumentu-nfz-realisation</td></tr>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code reflects client side error 4xx</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="9a54291a082504ff07212703487a0732ffdf39a6f58258e9622c9b9d5aebf422">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="a7dd08731f3ac4d4a7cc727721d83480f36d2cd4503515805e0e0678bc2b2e07.html" title="View test results">Get prescription realisation result request with invalid prescriptionId (input exception)</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionIdInputException</th></tr>
+</thead>
+<tbody>
+<tr><td>id-tech-dokumentu-nfz</td><td>id-tech-dokumentu-nfz-realisation</td></tr>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code reflects client side error 4xx</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="c1cbb6a4794281345b8e718f9f4e9123d374a0e7e3f6d10630874ab6b3e69f73">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="d909ae10780867539ff5de053df091fd17fb8f20153dac8ef36ef2bc93038e29.html" title="View test results">Get prescription realisation result request without documentTechId</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionId</th></tr>
+</thead>
+<tbody>
+<tr><td>sysName</td><td>sysName</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code reflects client side error 4xx</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="85c4ed431670c5c1c3e0364c14fb3e26d3c3c3ffd977629145aa108fb35eb401">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="cc1103c15f46eb0a8a8a758efc35fb2c9a695417c992680edcc5b0f834f7f352.html" title="View test results">Get prescription realisation result request without system name</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionId</th></tr>
+</thead>
+<tbody>
+<tr><td>id-tech-dokumentu-nfz</td><td>id-tech-dokumentu-nfz-realisation</td></tr>
+<tr><td>sysVersion</td><td>sysVersion</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code reflects client side error 4xx</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="scenario-docs card" id="3746bfa01a5c467dbee1df2f97bb1dc26e09537a9e46e31f90da180988dcfe7a">
+                                                    <div class="scenario-docs card-header success" style="min-height:1.5em;">
+                                                        <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="875017d7bac685f726e6c64da0e67b9f1940ef61eeb821f7ecaa10cbc5d4b454.html" title="View test results">Get prescription realisation result request without system version</a>
+                                                            </span>
+                                                            <span class="scenario-result-icon">
+                                                                
+
+                                                                    <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="scenario-docs card-body">
+                                                            <p><p>Given the getPrescription body data</p>
+<table>
+<thead>
+<tr><th>prescriptionId</th><th>prescriptionId</th></tr>
+</thead>
+<tbody>
+<tr><td>id-tech-dokumentu-nfz</td><td>id-tech-dokumentu-nfz-realisation</td></tr>
+<tr><td>sysName</td><td>sysName</td></tr>
+</tbody>
+</table>
+</p>
+                                                            <p>When the user performs a POST request on getPrescriptionRealisationResult</p>
+                                                            <p>Then the status code reflects client side error 4xx</p>
+                                                        <div class="examples">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+
+                                            <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                <div class="ct-chart ct-square"></div>
+                                            </div>
+                                            <script>
+
+                                                var labels = ['80%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '20%', ' ', ' ', ' ', ' ', ' '];
+                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                var series = [{meta: 'Passing tests (automated)', value: 8}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 2}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                // as you saw in the previous example
+                                                var options = {
+                                                    width: 350,
+                                                    height: 300
+                                                };
+
+                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                    new Chartist.Pie('.ct-chart', {
+                                                        series: series,
+                                                        labels: labels,
+                                                    }, {
+                                                        donut: true,
+                                                        donutWidth: 60,
+                                                        donutSolid: true,
+                                                        startAngle: 270,
+                                                        showLabel: true
+                                                    }, options);
+                                                });
+
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-8">
+
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Scenario Results (including rows of test data)</th>
+                                                <th scope="col" colspan="2" class="automated-stats">
+                                                    Automated
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="410180d526d14e04594f1fbe6c92095811b80cf698575991280e8c04cc67da7d.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                <td class="automated-stats">8</td>
+                                                <td class="automated-stats">80%</td>
+                                            </tr>
+                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr>
+                                                                             <td colspan="3"><a href="91c5a40ad8a96d7f60b765d9d1cec35f999e8deb50e34734d9734d3e0e830efb.html"><i
+                                                                                    class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+
+                                            </tr>
+
+                                            <tr>
+                                                                    <td class="aggregate-result-count indented-error-category">
+                                                                        <a href="634fe0f26f2cbf4234d2ef3fb3613ab376fd8b9e0074c0f653c1d534d1af4434.html"><i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                    </td>
+                                                <td class="automated-stats">2</td>
+                                                <td class="automated-stats">20%</td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                <td class="automated-stats">0</td>
+                                                <td class="automated-stats"> </td>
+                                            </tr>
+                                            <tr class="summary-stats">
+                                                <td class="aggregate-result-count">Total</td>
+                                                <td class="automated-stats">10</td>
+                                                <td class="automated-stats"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table class="table">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Execution Time</th>
+                                                        <th>Clock Time</th>
+                                                        <th>Fastest Test</th>
+                                                        <th>Slowest Test</th>
+                                                        <th>Average Execution Time</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>4s</td>
+                                                        <td>4s</td>
+                                                        <td>242ms</td>
+                                                        <td>1s</td>
+                                                        <td>432ms</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result FAILURE">
+                                                    <td>
+                                                            <a href="961f8ae618131c6bb2c0bc1519d1a398c3d0d9836d02e4980fae6315c93db8ba.html">Successful prescription realisation</a>
+                                                    </td>
+                                                    <td>32</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a> <span
+                                                                style="display:none">FAILURE</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result FAILURE">
+                                                    <td>
+                                                            <a href="66d7c360ac95538a7c491a6fb9889647355299a2bb7be2cc31dda255dc099914.html">Successful prescription realisation result retrieval</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a> <span
+                                                                style="display:none">FAILURE</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4b2e81181c4f712f6b4956cd91eb26c740820027e890f8902e60cebcc46067e3.html">Get prescription realisation result request without subscription token</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="75134482e1db00d0985f0eb56d4f231dd63d08c2475729d5e82105c40d844d96.html">Get prescription realisation result request without access token</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="f652e600d921573b5ec984f5f6e9735a057d6f6e2696a9b99ff53066981698c9.html">Get prescription realisation result request without prescriptionId</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="5003e12703597dc8abaa4676a1643c9a704759ddb94fe9381a58f0a4ff6476ae.html">Get prescription realisation result request with invalid prescriptionId and access code combination (service exception)</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="a7dd08731f3ac4d4a7cc727721d83480f36d2cd4503515805e0e0678bc2b2e07.html">Get prescription realisation result request with invalid prescriptionId (input exception)</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="d909ae10780867539ff5de053df091fd17fb8f20153dac8ef36ef2bc93038e29.html">Get prescription realisation result request without documentTechId</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="cc1103c15f46eb0a8a8a758efc35fb2c9a695417c992680edcc5b0f834f7f352.html">Get prescription realisation result request without system name</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="875017d7bac685f726e6c64da0e67b9f1940ef61eeb821f7ecaa10cbc5d4b454.html">Get prescription realisation result request without system version</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td> </td>
+                                                    <td> </td>
+                                                    <td>
+                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                style="display:none">SUCCESS</span>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.0.81</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

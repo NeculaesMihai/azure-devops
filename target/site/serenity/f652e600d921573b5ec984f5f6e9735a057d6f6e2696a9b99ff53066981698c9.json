@@ -1,0 +1,130 @@
+{
+  "name": "Get prescription realisation result request without prescriptionId",
+  "id": "odt-615-getprescriptionrealisationresult;get-prescription-realisation-result-request-without-prescriptionid",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 5,
+      "startTime": "2021-01-21T09:32:29.863Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 386,
+      "startTime": "2021-01-21T09:32:29.873Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 3,
+          "description": "POST https://login.microsoftonline.com/56865670-71f8-4015-adb0-d807100feb84/oauth2/v2.0/token",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:30.254Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://login.microsoftonline.com/56865670-71f8-4015-adb0-d807100feb84/oauth2/v2.0/token",
+            "content": "",
+            "contentType": "application/x-www-form-urlencoded",
+            "requestHeaders": "Authorization\u003dBasic ZGE1NmQzYzktN2VmNS00OTllLWE0ZWQtOGEyYWEzZGEyZTBjOmwxRC1sZE9fbFR5Nl9KVjNKUllRLjRpLXA2N0NfX0otNzc\u003d\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/x-www-form-urlencoded; charset\u003dISO-8859-1",
+            "requestCookies": "",
+            "responseHeaders": "Cache-Control: no-store, no-cache\nPragma: no-cache\nContent-Type: application/json; charset\u003dutf-8\nExpires: -1\nStrict-Transport-Security: max-age\u003d31536000; includeSubDomains\nX-Content-Type-Options: nosniff\nP3P: CP\u003d\"DSP CUR OTPi IND OTRi ONL FIN\"\nx-ms-request-id: 6606a077-9fd3-4ea3-92a6-f6cf56e5c500\nx-ms-ests-server: 2.1.11397.13 - NEULR2 ProdSlices\nSet-Cookie: fpc\u003dAhKjjaBC0jlGgXTL9-6aeStYMYLGAQAAAC1Bm9cOAAAA; expires\u003dSat, 20-Feb-2021 09:32:29 GMT; path\u003d/; secure; HttpOnly; SameSite\u003dNone\nSet-Cookie: x-ms-gateway-slice\u003destsfd; path\u003d/; secure; samesite\u003dnone; httponly\nSet-Cookie: stsservicecookie\u003destsfd; path\u003d/; secure; samesite\u003dnone; httponly\nDate: Thu, 21 Jan 2021 09:32:29 GMT\nContent-Length: 1372",
+            "responseCookies": "fpc\u003dAhKjjaBC0jlGgXTL9-6aeStYMYLGAQAAAC1Bm9cOAAAA;Path\u003d/;Secure;HttpOnly;Expires\u003d2/20/21 9:32 AM\nx-ms-gateway-slice\u003destsfd;Path\u003d/;Secure;HttpOnly\nstsservicecookie\u003destsfd;Path\u003d/;Secure;HttpOnly",
+            "responseBody": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599,\n    \"ext_expires_in\": 3599,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiJkMjI4NjA0ZC1mYmZjLTRkY2QtYmIxNy1lMzIzNDE3ZjM5NDQiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC81Njg2NTY3MC03MWY4LTQwMTUtYWRiMC1kODA3MTAwZmViODQvIiwiaWF0IjoxNjExMjIxMjQ5LCJuYmYiOjE2MTEyMjEyNDksImV4cCI6MTYxMTIyNTE0OSwiYWlvIjoiRTJKZ1lIQk50cFFQNGt4WS9FbTQ1OCtIdXVRM0FBPT0iLCJhcHBpZCI6ImRhNTZkM2M5LTdlZjUtNDk5ZS1hNGVkLThhMmFhM2RhMmUwYyIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzU2ODY1NjcwLTcxZjgtNDAxNS1hZGIwLWQ4MDcxMDBmZWI4NC8iLCJvaWQiOiJjOWM5YmE1NS01Y2I0LTRiYzYtODRjOS1lMTk5NDkwNzRjNWQiLCJyaCI6IjAuQVNBQWNGYUdWdmh4RlVDdHNOZ0hFQV9yaE1uVFZ0cjFmcDVKcE8yS0txUGFMZ3dnQUFBLiIsInJvbGVzIjpbIlRlc3RpbmcuQXV0b21hdGlvbiJdLCJzdWIiOiJjOWM5YmE1NS01Y2I0LTRiYzYtODRjOS1lMTk5NDkwNzRjNWQiLCJ0aWQiOiI1Njg2NTY3MC03MWY4LTQwMTUtYWRiMC1kODA3MTAwZmViODQiLCJ1dGkiOiJkNkFHWnRPZm8wNlNwdmJQVnVYRkFBIiwidmVyIjoiMS4wIn0.kofUGBY1hU1Xg6XO6cZFoQOiUQLdJFHG08gf018K4AnuDQjBKMYU9zsOcNEMICSKjYIQs3941_60H8CGoobDbKKyrz0iAUgBXIhZdn58nx9uwuOrbG9VA4UKgVnlzbNkvR_Tldj5muoQGpdTxpCTJeICfPjBCid_rSieNtuPEa0rHFvZS2gpa3xR22rR01j7hflhG7cqEddK6tqcJIXG1q85qqZCBmlC3zO0TPp3zgQcGScbJ7xxzlnCPjfNHmu0Lvm-WK0ywjdMU34ECpBYsMNFO-FDTrrpTlVtkckKdQ-1wKYIq9nF48B_ysJA01hpdTfCR2rpJBGx4V4QEIyDuQ\"\n}",
+            "statusCode": 200
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "description": "Given the getPrescription body data\n| id-tech-dokumentu-nfz | id-tech-dokumentu-nfz-realisation |\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:30.260Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "When the user performs a POST request on getPrescriptionRealisationResult",
+      "duration": 258,
+      "startTime": "2021-01-21T09:32:30.260Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 6,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/getPrescriptionRealisationResult",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:30.517Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/getPrescriptionRealisationResult",
+            "content": "{\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\"\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Transfer-Encoding: chunked\nContent-Type: application/json; charset\u003dutf-8\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:32:30 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"faultCode\": \"InputError\",\n    \"faultMessage\": \"The \u0027nr-zlecenia-nfz\u0027 attribute is invalid - The value \u0027\u0027 is invalid according to its datatype \u0027https://ezwm.nfz.gov.pl/ws/broker/nfz/xml/e-zpo/document-request/v2.1:TNrZleceniaNfz\u0027 - The actual length is less than the MinLength value.\"\n}",
+            "statusCode": 400
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then the status code reflects client side error 4xx",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:30.518Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-615-getprescriptionrealisationresult",
+    "storyName": "ODT-615-GetPrescriptionRealisationResult",
+    "path": "prescriptionRealisation/ODT-615-GetPrescriptionRealisationResult.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-615-GetPrescriptionRealisationResult",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-615-GetPrescriptionRealisationResult"
+  },
+  "title": "Get prescription realisation result request without prescriptionId",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-615-GetPrescriptionRealisationResult",
+      "type": "feature",
+      "displayName": "ODT-615-GetPrescriptionRealisationResult"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:29.856Z[Etc/UTC]",
+  "duration": 672,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

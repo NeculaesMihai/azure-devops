@@ -1,0 +1,107 @@
+{
+  "name": "Get prescription reservation status request without documentTechId",
+  "id": "odt-611-getprescriptionreservationstatus;get-prescription-reservation-status-request-without-documenttechid",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 5,
+      "startTime": "2021-01-21T09:32:12.257Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:12.262Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the getPrescription body data\n| prescriptionId | prescriptionId |\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:12.263Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the user performs a POST request on getPrescriptionReservationStatus",
+      "duration": 265,
+      "startTime": "2021-01-21T09:32:12.264Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 5,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/getPrescriptionReservationStatus",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:12.529Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/getPrescriptionReservationStatus",
+            "content": "{\n    \"prescriptionID\": \"T1-20-000101269-7\",\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\"\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Transfer-Encoding: chunked\nContent-Type: application/json; charset\u003dutf-8\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:32:11 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"faultCode\": \"InputError\",\n    \"faultMessage\": \"The \u0027id-tech-dokumentu-nfz\u0027 attribute is invalid - The value \u0027\u0027 is invalid according to its datatype \u0027https://ezwm.nfz.gov.pl/ws/broker/nfz/xml/e-zpo/status-request/v2.1:TTekstDo38\u0027 - The actual length is less than the MinLength value.\"\n}",
+            "statusCode": 400
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "description": "Then the status code reflects client side error 4xx",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:12.530Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-611-getprescriptionreservationstatus",
+    "storyName": "ODT-611-GetPrescriptionReservationStatus",
+    "path": "prescriptionRealisation/ODT-611-GetPrescriptionReservationStatus.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-611-GetPrescriptionReservationStatus",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-611-GetPrescriptionReservationStatus"
+  },
+  "title": "Get prescription reservation status request without documentTechId",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-611-GetPrescriptionReservationStatus",
+      "type": "feature",
+      "displayName": "ODT-611-GetPrescriptionReservationStatus"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:12.252Z[Etc/UTC]",
+  "duration": 282,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

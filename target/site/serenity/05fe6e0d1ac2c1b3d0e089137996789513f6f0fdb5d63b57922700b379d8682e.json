@@ -1,0 +1,116 @@
+{
+  "name": "Get prescription details request without access token",
+  "id": "odt-609-getprescriptiondetails;get-prescription-details-request-without-access-token",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:00.335Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 2,
+      "startTime": "2021-01-21T09:32:00.337Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the getPrescription body data\n| prescriptionId | prescriptionId |\n| accessCode | accessCode |\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:00.340Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the access token is empty",
+      "duration": 3,
+      "startTime": "2021-01-21T09:32:00.342Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "And the user performs a POST request on getPrescriptionDetails",
+      "duration": 281,
+      "startTime": "2021-01-21T09:32:00.345Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 6,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/getPrescriptionDetails",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:00.625Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/getPrescriptionDetails",
+            "content": "{\n    \"prescriptionID\": \"T1-20-000101269-7\",\n    \"accessCode\": \"49071866678\",\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\"\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Content-Length: 60\nContent-Type: application/json\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:31:59 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"statusCode\": 401,\n    \"message\": \"Token invalid or missing\"\n}",
+            "statusCode": 401
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then the status code is 401",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:00.626Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-609-getprescriptiondetails",
+    "storyName": "ODT-609-GetPrescriptionDetails",
+    "path": "prescriptionRealisation/ODT-609-GetPrescriptionDetails.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-609-GetPrescriptionDetails",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-609-GetPrescriptionDetails"
+  },
+  "title": "Get prescription details request without access token",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-609-GetPrescriptionDetails",
+      "type": "feature",
+      "displayName": "ODT-609-GetPrescriptionDetails"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:00.320Z[Etc/UTC]",
+  "duration": 331,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

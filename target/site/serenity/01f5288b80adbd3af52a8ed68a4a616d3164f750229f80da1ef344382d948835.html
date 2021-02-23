@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Serenity Reports</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+
+
+        $('.scenario-result-table').DataTable({
+
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 25,
+            "language": {
+                searchPlaceholder: "Filter",
+                search: ""
+            }
+        });
+
+        // Results table
+        $('#test-results-table').DataTable({
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 100,
+            "lengthMenu": [[25, 50, 100, 200, -1], [25, 50, 100, 200, "All"]]
+        });
+
+    })
+    ;
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">ODT-Test-Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+
+
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs"><a href="index.html">Home</a>
+                > <span
+                    class="truncate-60">Passing Tests</span>
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 21-01-2021 09:32</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <h2>Passing Tests</h2>
+                <table class='overview'>
+                    <tr>
+                        <td width="375px" valign="top">
+                            <div class="test-count-summary">
+                                <div>
+
+                                68 passing tests
+                                    across 68 scenarios
+
+                                     |
+                                        <a href="01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.csv" title="Download CSV"> <i class="fa fa-download"
+                                                                                        title="Download CSV"></i></a>
+
+
+
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#summary"><i class="fas fa-home"></i> Summary</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tests"><i class="fas fa-tachometer-alt"></i> Test
+                                            Results</a>
+                                    </li>
+                                </ul>
+
+
+                                <div class="card border">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div id="summary" class="tab-pane fade in active">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                            <div style="width:300px;"
+                                                                 class="chart-container automated-and-manual-results">
+                                                                <div class="ct-chart ct-square"></div>
+                                                            </div>
+                                                            <script>
+
+                                                                var labels = ['100%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                                var series = [{meta: 'Passing tests (automated)', value: 68}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                                // as you saw in the previous example
+                                                                var options = {
+                                                                    width: 350,
+                                                                    height: 300
+                                                                };
+
+
+                                                                new Chartist.Pie('.ct-chart', {
+                                                                    series: series,
+                                                                    labels: labels
+                                                                }, {
+                                                                    plugins: [Chartist.plugins.tooltip()],
+                                                                    donut: true,
+                                                                    donutWidth: 60,
+                                                                    donutSolid: true,
+                                                                    startAngle: 270,
+                                                                    showLabel: true
+                                                                }, options);
+
+
+                                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                                    new Chartist.Pie('.ct-chart', {
+                                                                        series: series,
+                                                                        labels: labels
+                                                                    }, {
+                                                                        plugins: [Chartist.plugins.tooltip()],
+                                                                        donut: true,
+                                                                        donutWidth: 60,
+                                                                        donutSolid: true,
+                                                                        startAngle: 270,
+                                                                        showLabel: true
+                                                                    }, options);
+                                                                });
+
+
+                                                            </script>
+                                                    </div>
+                                                    <div class="col-sm-8">
+
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th scope="col">Scenarios</th>
+                                                                <th scope="col" colspan="2" class="automated-stats">
+                                                                    Automated
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="01f5288b80adbd3af52a8ed68a4a616d3164f750229f80da1ef344382d948835.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                                <td class="automated-stats">68</td>
+                                                                <td class="automated-stats">100%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                            <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr class="summary-stats">
+                                                                <td class="aggregate-result-count">Total</td>
+                                                                <td class="automated-stats">68</td>
+                                                                <td class="automated-stats"></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div id="tests" class="tab-pane fade">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th>feature</th>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="23c39909d40070e0d6f47af4fa1711566e1769dc1703af2ad8322ddeacd23d9f.html">Successful prescription status retrieval</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:31:44</td>
+                                                    <td>00:04</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="30ea76471bb076d31d1fa9364a2ec96d462b983da3b40dd0b65d087267be0676.html">Successful prescription status retrieval using patient date of birth as access code</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:31:49</td>
+                                                    <td>00:01</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="aebb3efda148e26a59eaee5bdde4fba2319090537f4ae039f1e4ef8e59564021.html">Get prescription status request without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:31:50</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="c6cef196a9fe1a86605782c512b67899abcfc300c46e02406479c808c2614e4a.html">Get prescription status request without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:31:50</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="b0a2f61c5b263021e70f65bf655d14df50641bd42e1686fb1f7541c300e6b286.html">Get prescription status request without prescriptionId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:31:51</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="3b5dd2b3d6156b44ca8954d8a59faab1db26673961c86792a5f970307683d9bd.html">Get prescription status request with invalid prescriptionId and access code combination (service exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:31:51</td>
+                                                    <td>00:04</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="88b9b2a2fce7d2c3af958324f93e83d8a6f40b4a1f76e790775aa0b8e586dc2e.html">Get prescription status request with invalid prescriptionId (input exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:31:56</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="65b9c1660df4cd6131ed66dbf7935ab5b54c2a10e778fc5d78c74932b29cd28e.html">Get prescription status request without access code</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:31:57</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="e60a11ad5e0dab0613fd6018250cda08d56643eabd8e8109c6820f20a07b6593.html">Get prescription status request without system name</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:31:57</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b7c9b38ac8747f82e66de0b19cff8ea57fe31b84ffd122530d2e02b980366d83.html">ODT-608-GetPrescriptionStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="f936c05983269acf70295edb3ecb492e5c27eb91bf490c83622a07b89abf8f43.html">Get prescription status request without system version</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:31:57</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="475f0556d9b1ed1fbf00e662caf869018bcdb5b9121e74e52f930ec421acda94.html">Successful prescription details retrieval</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:31:58</td>
+                                                    <td>00:01</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="202bf2664499bb4b6c21fb8eaf0171001d438bbe0c2ad8cd3a421dd166dab8cf.html">Successful prescription details retrieval using patient date of birth as access code</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:31:59</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="e6722de6a703934d5c3030d5b6b1504b1b64009d93f4b0304f218e0e0509dabf.html">Get prescription details request without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:00</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="05fe6e0d1ac2c1b3d0e089137996789513f6f0fdb5d63b57922700b379d8682e.html">Get prescription details request without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:00</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="d7104d60722276078618d3f74086364772f160dcfe9ef888b37e8894363a4aad.html">Get prescription details request without prescriptionId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:00</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="ff9e9af9ec148065320a738e99623205e8443581b03184cd8f411f9a1855c8b2.html">Get prescription details request with invalid prescriptionId and access code combination (service exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:01</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="bb30a2d930f8f2c768fa234d7d183e18329549cf6f7b30c65d7e79e1b99053c2.html">Get prescription details request with invalid prescriptionId (input exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:02</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="f13cce22216fcc918b744867f3fcc429b15f658c7e4ad5c6b9f112cb49e559e1.html">Get prescription details request without access code</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:02</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="41bb59c1637fd1723c6b2123699ef5da5a5823cc15d3514277dd5419f8161800.html">Get prescription details request without system name</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:02</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="bc30969f92690199e7e13bf7ab05a2cd9a52c9789c9132aaab36fee6bee7bba5.html">ODT-609-GetPrescriptionDetails</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="d8737228524eb43542440e08efe52a0e387fce75c14321d0b1dd85bfefa91676.html">Get prescription details request without system version</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:03</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="7d1bdd6a2a3ba2225ecf4a4841f39c88bc1c88193415fcd59588fc016edb7e17.html">ODT-610-SetPrescriptionReservation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="d81dd2b83d315cf91c4e99dda7a9f7ef0597ea370524c4e247891f7a4265a06b.html">Set prescription reservation request without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:05</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="7d1bdd6a2a3ba2225ecf4a4841f39c88bc1c88193415fcd59588fc016edb7e17.html">ODT-610-SetPrescriptionReservation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="276d72392e8d0bf553d4d11e68b570a8e4f40deea64c282255bdfead32b478c2.html">Set prescription reservation request without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:05</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="7d1bdd6a2a3ba2225ecf4a4841f39c88bc1c88193415fcd59588fc016edb7e17.html">ODT-610-SetPrescriptionReservation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="43eacefe0a45b665694b59069c40ada0531f70d0f6ee7bc19d36abba0087bfc4.html">Set prescription reservation request without system name</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:06</td>
+                                                    <td>00:01</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="7d1bdd6a2a3ba2225ecf4a4841f39c88bc1c88193415fcd59588fc016edb7e17.html">ODT-610-SetPrescriptionReservation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="f74f543ce0f4e9e391aad08bff5a582e47f68170c0073d18c4eb701ba084ea54.html">Set prescription reservation request without system version</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:07</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="167593e7f85403d72c51950b0a99fb917533392c2ecadbb0d6b6ba1f962f50a0.html">ODT-611-GetPrescriptionReservationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="6b5a7e8e0827d0f79501ce088783c88d04a13f7269651547aa544ab1e08c6b64.html">Get prescription reservation status request without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:10</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="167593e7f85403d72c51950b0a99fb917533392c2ecadbb0d6b6ba1f962f50a0.html">ODT-611-GetPrescriptionReservationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="94839d6599aece8320319f22cda97b52f1c6bd2767207480d72d84da6b9d8cc1.html">Get prescription reservation status request without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:10</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="167593e7f85403d72c51950b0a99fb917533392c2ecadbb0d6b6ba1f962f50a0.html">ODT-611-GetPrescriptionReservationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="d528d9154ace576d414310521cd6ded3aa62a2a2d99751ce4cfeda0e1d23c1f1.html">Get prescription reservation status request without prescriptionId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:10</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="167593e7f85403d72c51950b0a99fb917533392c2ecadbb0d6b6ba1f962f50a0.html">ODT-611-GetPrescriptionReservationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="1c43896cf2f4f4a2dfc71c9eb4df2792f0698169e5231db513bacc7468aa215d.html">Get prescription reservation status request with invalid prescriptionId and access code combination (service exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:11</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="167593e7f85403d72c51950b0a99fb917533392c2ecadbb0d6b6ba1f962f50a0.html">ODT-611-GetPrescriptionReservationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="1720bce6544ca6baeaecbc77d1f9bd85981885431df5601b1ac90235f3474798.html">Get prescription reservation status request with invalid prescriptionId (input exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:11</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="167593e7f85403d72c51950b0a99fb917533392c2ecadbb0d6b6ba1f962f50a0.html">ODT-611-GetPrescriptionReservationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="1025d5546e304f835bac39b4cbd2ad6e44c1c99eda37ca1ed9a050ada5578940.html">Get prescription reservation status request without documentTechId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:12</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="167593e7f85403d72c51950b0a99fb917533392c2ecadbb0d6b6ba1f962f50a0.html">ODT-611-GetPrescriptionReservationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="4b743eb5f2dff0f0a01e33cc5358300e3fd101fc911f1ad3a42506a05e0f3ffe.html">Get prescription reservation status request without system name</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:12</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="167593e7f85403d72c51950b0a99fb917533392c2ecadbb0d6b6ba1f962f50a0.html">ODT-611-GetPrescriptionReservationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="09cc7a3c08a2b5729dbe9638c79198a34a42fc7cf5a90336a402c8ebf94fc27c.html">Get prescription reservation status request without system version</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:12</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="173f1b09ec0cfdece2d86d1f17e6c46d0246cfe7e021b9435b4c499a0f95a680.html">ODT-612-GetPrescriptionReservationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="a6804c68ffd3edfb8171340542fac2e612ae2a67ef33be0c48ab5c88ca798795.html">Get prescription reservation result request without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:15</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="173f1b09ec0cfdece2d86d1f17e6c46d0246cfe7e021b9435b4c499a0f95a680.html">ODT-612-GetPrescriptionReservationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="57c14a217f271cf959872a2126b936ded89e487712f07648d3e113abe7b5fdcf.html">Get prescription reservation result request without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:15</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="173f1b09ec0cfdece2d86d1f17e6c46d0246cfe7e021b9435b4c499a0f95a680.html">ODT-612-GetPrescriptionReservationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="a02ab99fb238c4654a493f3674a4121f06c2f61cdf67084ffeaea54eebea546a.html">Get prescription reservation result request without prescriptionId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:15</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="173f1b09ec0cfdece2d86d1f17e6c46d0246cfe7e021b9435b4c499a0f95a680.html">ODT-612-GetPrescriptionReservationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="7d1f66abd177759b152a3ed375a7667d993ee35a361633c3f78a19d15dcd01c3.html">Get prescription reservation result request with invalid prescriptionId and access code combination (service exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:16</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="173f1b09ec0cfdece2d86d1f17e6c46d0246cfe7e021b9435b4c499a0f95a680.html">ODT-612-GetPrescriptionReservationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="7417eeb39aeab23b8059ca01afd7bdf3b0a8a3d06021192b6114986298ea59fe.html">Get prescription reservation result request with invalid prescriptionId (input exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:16</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="173f1b09ec0cfdece2d86d1f17e6c46d0246cfe7e021b9435b4c499a0f95a680.html">ODT-612-GetPrescriptionReservationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="ed2b134f59ebff3f38e681bc239fc42a0f41999fc506f86b1253870632df3dec.html">Get prescription reservation result request without documentTechId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:17</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="173f1b09ec0cfdece2d86d1f17e6c46d0246cfe7e021b9435b4c499a0f95a680.html">ODT-612-GetPrescriptionReservationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="5389b63e4ccd87b007d2929b11c95edd82bbea09e75412e56f69b037979e0362.html">Get prescription reservation result request without system name</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:17</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="173f1b09ec0cfdece2d86d1f17e6c46d0246cfe7e021b9435b4c499a0f95a680.html">ODT-612-GetPrescriptionReservationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="88d55d79dd3edd255d5b2d36e815186e32a1eb5161e7f4a9005935715c2304cb.html">Get prescription reservation result request without system version</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:17</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b4f7227466f8d30bdf0f426932efa6775dc30fdec9497040410bcd1d1cf7f8ea.html">ODT-613-SetPrescriptionRealisation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="e4113795526067f92df8e4cca06c0a5bb67dbb92a1d5f109de4e8835bb1117aa.html">Set prescription realisation request without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:19</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b4f7227466f8d30bdf0f426932efa6775dc30fdec9497040410bcd1d1cf7f8ea.html">ODT-613-SetPrescriptionRealisation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="4a66e1a45d0cde424e34c7fc2ec79b8ee0a77cd7512ff38ec8dd5314ce75aab4.html">Set prescription realisation request without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:19</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b4f7227466f8d30bdf0f426932efa6775dc30fdec9497040410bcd1d1cf7f8ea.html">ODT-613-SetPrescriptionRealisation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="7c1bbd20d990d86d66717a51a6d7010dcc0309a3654fd968a738462b4c3fd388.html">Set prescription realisation request without system name</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:20</td>
+                                                    <td>00:01</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="b4f7227466f8d30bdf0f426932efa6775dc30fdec9497040410bcd1d1cf7f8ea.html">ODT-613-SetPrescriptionRealisation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="9832abe3bc69efc83bc1f228142774c619256b984b79a8fa47f85f518eba1639.html">Set prescription realisation request without system version</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:21</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="593df3bf29e8034a4bf2d97f8a825a7dacb0374cb048cc13ae157f06b25a7e23.html">ODT-614-GetPrescriptionRealisationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="332db9b604e555ada51ebd5e5cb227b399ff03415a0172fe8304b8fc7710aa7a.html">Get prescription realisation status request without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:24</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="593df3bf29e8034a4bf2d97f8a825a7dacb0374cb048cc13ae157f06b25a7e23.html">ODT-614-GetPrescriptionRealisationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="873be6883f34c3d90112f99a18a554f5bed4104e585dbe654c21ce77b254ddcc.html">Get prescription realisation status request without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:24</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="593df3bf29e8034a4bf2d97f8a825a7dacb0374cb048cc13ae157f06b25a7e23.html">ODT-614-GetPrescriptionRealisationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="276abc7b856720106c26a9be5af56b1157145f83df90caa4554ee3df1b1b2cfb.html">Get prescription realisation status request without prescriptionId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:24</td>
+                                                    <td>00:01</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="593df3bf29e8034a4bf2d97f8a825a7dacb0374cb048cc13ae157f06b25a7e23.html">ODT-614-GetPrescriptionRealisationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="dba4df48929dbaec68823e33971cdedcd4b8573360d190404f2fe20f13ca2aa1.html">Get prescription realisation status request with invalid prescriptionId and access code combination (service exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:26</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="593df3bf29e8034a4bf2d97f8a825a7dacb0374cb048cc13ae157f06b25a7e23.html">ODT-614-GetPrescriptionRealisationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="71ba865b8629cb12e44c1c2a253005276bd0ae09f91c6c43f4865f1f4edf93a4.html">Get prescription realisation status request with invalid prescriptionId (input exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:26</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="593df3bf29e8034a4bf2d97f8a825a7dacb0374cb048cc13ae157f06b25a7e23.html">ODT-614-GetPrescriptionRealisationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="7e53f9698f01ff0ebd0fb2fd6618f87d1e1d35cf875b18bfaf137137b2b45c2b.html">Get prescription realisation status request without documentTechId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:26</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="593df3bf29e8034a4bf2d97f8a825a7dacb0374cb048cc13ae157f06b25a7e23.html">ODT-614-GetPrescriptionRealisationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="cb27d70dbdb4dc0a86e91477836dc19bcdd2d67123a94e0230e1d136f782789b.html">Get prescription realisation status request without system name</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:26</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="593df3bf29e8034a4bf2d97f8a825a7dacb0374cb048cc13ae157f06b25a7e23.html">ODT-614-GetPrescriptionRealisationStatus</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="5656ff09ddb3528320da685fa8c7de27f626322bd546c679db512e345449e5f9.html">Get prescription realisation status request without system version</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:27</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="e0e71107416923e49ba9bc0ead37e062633d8e2ae01d80a281b58f2622badfda.html">ODT-615-GetPrescriptionRealisationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="4b2e81181c4f712f6b4956cd91eb26c740820027e890f8902e60cebcc46067e3.html">Get prescription realisation result request without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:29</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="e0e71107416923e49ba9bc0ead37e062633d8e2ae01d80a281b58f2622badfda.html">ODT-615-GetPrescriptionRealisationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="75134482e1db00d0985f0eb56d4f231dd63d08c2475729d5e82105c40d844d96.html">Get prescription realisation result request without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:29</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="e0e71107416923e49ba9bc0ead37e062633d8e2ae01d80a281b58f2622badfda.html">ODT-615-GetPrescriptionRealisationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="f652e600d921573b5ec984f5f6e9735a057d6f6e2696a9b99ff53066981698c9.html">Get prescription realisation result request without prescriptionId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:29</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="e0e71107416923e49ba9bc0ead37e062633d8e2ae01d80a281b58f2622badfda.html">ODT-615-GetPrescriptionRealisationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="5003e12703597dc8abaa4676a1643c9a704759ddb94fe9381a58f0a4ff6476ae.html">Get prescription realisation result request with invalid prescriptionId and access code combination (service exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:30</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="e0e71107416923e49ba9bc0ead37e062633d8e2ae01d80a281b58f2622badfda.html">ODT-615-GetPrescriptionRealisationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="a7dd08731f3ac4d4a7cc727721d83480f36d2cd4503515805e0e0678bc2b2e07.html">Get prescription realisation result request with invalid prescriptionId (input exception)</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:30</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="e0e71107416923e49ba9bc0ead37e062633d8e2ae01d80a281b58f2622badfda.html">ODT-615-GetPrescriptionRealisationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="d909ae10780867539ff5de053df091fd17fb8f20153dac8ef36ef2bc93038e29.html">Get prescription realisation result request without documentTechId</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:31</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="e0e71107416923e49ba9bc0ead37e062633d8e2ae01d80a281b58f2622badfda.html">ODT-615-GetPrescriptionRealisationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="cc1103c15f46eb0a8a8a758efc35fb2c9a695417c992680edcc5b0f834f7f352.html">Get prescription realisation result request without system name</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:31</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="e0e71107416923e49ba9bc0ead37e062633d8e2ae01d80a281b58f2622badfda.html">ODT-615-GetPrescriptionRealisationResult</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="875017d7bac685f726e6c64da0e67b9f1940ef61eeb821f7ecaa10cbc5d4b454.html">Get prescription realisation result request without system version</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:31</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="cd5a8ea72e261525300420637783b47a73ef4684fccd5a5294a814b08411927a.html">ODT-616-CancelPrescriptionReservation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="8d58d1843078565999eb036ffb2bc279e5b738ffc17092f23b130c00bfefa067.html">Cancel prescription reservation without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:32</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="cd5a8ea72e261525300420637783b47a73ef4684fccd5a5294a814b08411927a.html">ODT-616-CancelPrescriptionReservation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="caf223b0b63a3bd49048023414aea20a01414d2e06b5509247e18e98b031041f.html">Cancel prescription reservation without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:33</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="cd5a8ea72e261525300420637783b47a73ef4684fccd5a5294a814b08411927a.html">ODT-616-CancelPrescriptionReservation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="878dc8124776480a0e276937708bce55e63023177cc08a16522aaa3730076d05.html">Cancel prescription reservation without sysName</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:33</td>
+                                                    <td>00:01</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="cd5a8ea72e261525300420637783b47a73ef4684fccd5a5294a814b08411927a.html">ODT-616-CancelPrescriptionReservation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="ebd25a2675abb7bce5417b97ce3492ba032a195e85ce58e80b4e3b874d5b1c89.html">Cancel prescription reservation without sysVersion</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:35</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8806b7cb08418b9be6933925e5ae346ffd2c0678b06ebdbfb3104f55d316b2dd.html">ODT-617-CancelPrescriptionRealisation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="59221248ff5484515ad3394189284094ad67a749e289ccd3351f58b31ac18f68.html">Cancel prescription realisation without subscription token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:37</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8806b7cb08418b9be6933925e5ae346ffd2c0678b06ebdbfb3104f55d316b2dd.html">ODT-617-CancelPrescriptionRealisation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="32fc9e28ab9b9bdeff879c70c536dca56aa76024dddfcd4161c73788af309ba9.html">Cancel prescription realisation without access token</a>
+                                                    </td>
+                                                    <td>6</td>
+                                                    <td>09:32:38</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8806b7cb08418b9be6933925e5ae346ffd2c0678b06ebdbfb3104f55d316b2dd.html">ODT-617-CancelPrescriptionRealisation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="5e494423754f1370e372d0bf3e0284020ae1653ad91ae7f17bfb71f9ea0e40c1.html">Cancel prescription realisation without sysName</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:38</td>
+                                                    <td>00:01</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="8806b7cb08418b9be6933925e5ae346ffd2c0678b06ebdbfb3104f55d316b2dd.html">ODT-617-CancelPrescriptionRealisation</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="1e709d55085ebc4b70461ba1a700ec10160bbcd75893bb30467952b263ff53ce.html">Cancel prescription realisation without sysVersion</a>
+                                                    </td>
+                                                    <td>5</td>
+                                                    <td>09:32:39</td>
+                                                    <td>00:00</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 2.0.81</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

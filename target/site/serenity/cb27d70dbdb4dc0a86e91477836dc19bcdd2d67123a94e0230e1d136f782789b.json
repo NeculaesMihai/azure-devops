@@ -1,0 +1,107 @@
+{
+  "name": "Get prescription realisation status request without system name",
+  "id": "odt-614-getprescriptionrealisationstatus;get-prescription-realisation-status-request-without-system-name",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:26.883Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:26.884Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the getPrescription body data\n| prescriptionId | prescriptionId |\n| id-tech-dokumentu-nfz | id-tech-dokumentu-nfz-realisation |\n| sysVersion | sysVersion |",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:26.884Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the user performs a POST request on getPrescriptionRealisationStatus",
+      "duration": 335,
+      "startTime": "2021-01-21T09:32:26.885Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 5,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/getPrescriptionRealisationStatus",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:27.219Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/getPrescriptionRealisationStatus",
+            "content": "{\n    \"prescriptionID\": \"T1-20-000101269-7\",\n    \"sysVersion\": \"106,074,2997\"\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Transfer-Encoding: chunked\nContent-Type: application/json; charset\u003dutf-8\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:32:26 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"faultCode\": \"InputError\",\n    \"faultMessage\": \"The \u0027nazwa-sys\u0027 attribute is invalid - The value \u0027\u0027 is invalid according to its datatype \u0027https://ezwm.nfz.gov.pl/ws/broker/nfz/xml/e-zpo/status-request/v2.1:TTekst3Do15\u0027 - The actual length is less than the MinLength value.\"\n}",
+            "statusCode": 400
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "description": "Then the status code reflects client side error 4xx",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:27.220Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-614-getprescriptionrealisationstatus",
+    "storyName": "ODT-614-GetPrescriptionRealisationStatus",
+    "path": "prescriptionRealisation/ODT-614-GetPrescriptionRealisationStatus.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-614-GetPrescriptionRealisationStatus",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-614-GetPrescriptionRealisationStatus"
+  },
+  "title": "Get prescription realisation status request without system name",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation/ODT-614-GetPrescriptionRealisationStatus",
+      "type": "feature",
+      "displayName": "ODT-614-GetPrescriptionRealisationStatus"
+    },
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:26.878Z[Etc/UTC]",
+  "duration": 349,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

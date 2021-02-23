@@ -1,0 +1,116 @@
+{
+  "name": "Set prescription reservation request without access token",
+  "id": "odt-610-setprescriptionreservation;set-prescription-reservation-request-without-access-token",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 2,
+      "startTime": "2021-01-21T09:32:05.798Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:05.800Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the setPrescriptionReservation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 11,
+      "startTime": "2021-01-21T09:32:05.801Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the access token is empty",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:05.813Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "And the user performs a POST request on setPrescriptionReservation",
+      "duration": 277,
+      "startTime": "2021-01-21T09:32:05.815Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 6,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/setPrescriptionReservation",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:06.091Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/setPrescriptionReservation",
+            "content": "{\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\",\n    \"internalRequest\": {\n        \"typ-nad\": \"S\",\n        \"ow-nad\": \"07\",\n        \"id-nad\": \"70061628\",\n        \"id-inst-nad\": \"Softlab ERP\",\n        \"id-tech-dokumentu\": \"2fc61583-6742-43a2-8816-34d8db0b4da6\",\n        \"nr-wersji\": \"3\",\n        \"data-gen\": \"2021-01-21T09:32:05.810\",\n        \"zlecenie\": {\n            \"nr-zlecenia-nfz\": \"T1-20-000101269-7\",\n            \"kod-dostepu\": \"49071866678\",\n            \"dane-pobrania\": {\n                \"data-pobrania\": \"2021-01-21\",\n                \"czesciowa-realizacja\": \"T\",\n                \"mies-realizacji\": {\n                    \"mies-od\": \"2021-01\",\n                    \"lb-mies\": \"1\"\n                },\n                \"podmiot-realizacji-zlecenia\": {\n                    \"nazwa\": \"CONVATEC POLSKA SP. Z O.O.\",\n                    \"regon\": \"141437294\",\n                    \"swd\": {\n                        \"ow-nfz\": \"07\",\n                        \"kod-swd\": \"70061628\",\n                        \"umowa-z-nfz\": {\n                            \"nr-umowy\": \"070061628200001\"\n                        }\n                    }\n                },\n                \"miejsce-realizacji-zlecenia\": {\n                    \"kod-tech-miejsca\": \"54103\",\n                    \"nazwa-miej\": \"SKLEP MEDYCZNY MEDICA HUMANA\",\n                    \"adres\": {\n                        \"kod-poczt\": \"00-854\",\n                        \"miejscowosc\": \"Warszawa\",\n                        \"ulica\": \"KROCHMALNA\",\n                        \"nr-domu\": \"32A\",\n                        \"kod-kraju\": \"PL\"\n                    }\n                },\n                \"brak-dod-upr\": \"1\",\n                \"potw-uprawnien-realizator\": {\n                    \"tytul-uprawn\": \"U\",\n                    \"dokument\": {\n                        \"rodzaj\": \"58\"\n                    }\n                }\n            }\n        }\n    }\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Content-Length: 60\nContent-Type: application/json\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:32:04 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"statusCode\": 401,\n    \"message\": \"Token invalid or missing\"\n}",
+            "statusCode": 401
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then the status code is 401",
+      "duration": 3,
+      "startTime": "2021-01-21T09:32:06.092Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-610-setprescriptionreservation",
+    "storyName": "ODT-610-SetPrescriptionReservation",
+    "path": "prescriptionRealisation/ODT-610-SetPrescriptionReservation.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-610-SetPrescriptionReservation",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-610-SetPrescriptionReservation"
+  },
+  "title": "Set prescription reservation request without access token",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation/ODT-610-SetPrescriptionReservation",
+      "type": "feature",
+      "displayName": "ODT-610-SetPrescriptionReservation"
+    },
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:05.781Z[Etc/UTC]",
+  "duration": 331,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

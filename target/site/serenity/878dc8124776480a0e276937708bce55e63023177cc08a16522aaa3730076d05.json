@@ -1,0 +1,130 @@
+{
+  "name": "Cancel prescription reservation without sysName",
+  "id": "odt-616-cancelprescriptionreservation;cancel-prescription-reservation-without-sysname",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:33.460Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 622,
+      "startTime": "2021-01-21T09:32:33.461Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 3,
+          "description": "POST https://login.microsoftonline.com/56865670-71f8-4015-adb0-d807100feb84/oauth2/v2.0/token",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:34.078Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://login.microsoftonline.com/56865670-71f8-4015-adb0-d807100feb84/oauth2/v2.0/token",
+            "content": "",
+            "contentType": "application/x-www-form-urlencoded",
+            "requestHeaders": "Authorization\u003dBasic ZGE1NmQzYzktN2VmNS00OTllLWE0ZWQtOGEyYWEzZGEyZTBjOmwxRC1sZE9fbFR5Nl9KVjNKUllRLjRpLXA2N0NfX0otNzc\u003d\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/x-www-form-urlencoded; charset\u003dISO-8859-1",
+            "requestCookies": "",
+            "responseHeaders": "Cache-Control: no-store, no-cache\nPragma: no-cache\nContent-Length: 1372\nContent-Type: application/json; charset\u003dutf-8\nExpires: -1\nStrict-Transport-Security: max-age\u003d31536000; includeSubDomains\nX-Content-Type-Options: nosniff\nP3P: CP\u003d\"DSP CUR OTPi IND OTRi ONL FIN\"\nx-ms-request-id: 333fb62d-ae45-4ea3-b0c8-78ae9c26c500\nx-ms-ests-server: 2.1.11397.13 - WEULR1 ProdSlices\nSet-Cookie: fpc\u003dAni4Eny0jAJPqb708jTatSxYMYLGAQAAADBBm9cOAAAA; expires\u003dSat, 20-Feb-2021 09:32:33 GMT; path\u003d/; secure; HttpOnly; SameSite\u003dNone\nSet-Cookie: x-ms-gateway-slice\u003destsfd; path\u003d/; secure; samesite\u003dnone; httponly\nSet-Cookie: stsservicecookie\u003destsfd; path\u003d/; secure; samesite\u003dnone; httponly\nDate: Thu, 21 Jan 2021 09:32:33 GMT",
+            "responseCookies": "fpc\u003dAni4Eny0jAJPqb708jTatSxYMYLGAQAAADBBm9cOAAAA;Path\u003d/;Secure;HttpOnly;Expires\u003d2/20/21 9:32 AM\nx-ms-gateway-slice\u003destsfd;Path\u003d/;Secure;HttpOnly\nstsservicecookie\u003destsfd;Path\u003d/;Secure;HttpOnly",
+            "responseBody": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599,\n    \"ext_expires_in\": 3599,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiJkMjI4NjA0ZC1mYmZjLTRkY2QtYmIxNy1lMzIzNDE3ZjM5NDQiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC81Njg2NTY3MC03MWY4LTQwMTUtYWRiMC1kODA3MTAwZmViODQvIiwiaWF0IjoxNjExMjIxMjUzLCJuYmYiOjE2MTEyMjEyNTMsImV4cCI6MTYxMTIyNTE1MywiYWlvIjoiRTJKZ1lGajIvYVRPcDkxekcwNWZzN21tWCtZOEJ3QT0iLCJhcHBpZCI6ImRhNTZkM2M5LTdlZjUtNDk5ZS1hNGVkLThhMmFhM2RhMmUwYyIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzU2ODY1NjcwLTcxZjgtNDAxNS1hZGIwLWQ4MDcxMDBmZWI4NC8iLCJvaWQiOiJjOWM5YmE1NS01Y2I0LTRiYzYtODRjOS1lMTk5NDkwNzRjNWQiLCJyaCI6IjAuQVNBQWNGYUdWdmh4RlVDdHNOZ0hFQV9yaE1uVFZ0cjFmcDVKcE8yS0txUGFMZ3dnQUFBLiIsInJvbGVzIjpbIlRlc3RpbmcuQXV0b21hdGlvbiJdLCJzdWIiOiJjOWM5YmE1NS01Y2I0LTRiYzYtODRjOS1lMTk5NDkwNzRjNWQiLCJ0aWQiOiI1Njg2NTY3MC03MWY4LTQwMTUtYWRiMC1kODA3MTAwZmViODQiLCJ1dGkiOiJMYllfTTBXdW8wNnd5SGl1bkNiRkFBIiwidmVyIjoiMS4wIn0.kPoInoWCVYl6YpQ4pvTC8vK89hT_52R7Nc3UlCnuxmINEzsFre3zvW4cdjiL2lkNZ_ZrmXcKTGHW1yiV1eQumnq65S8tbqfvCG6WLuKElSais4GAhQxJ53TceUEaioBEWBWbl0xcKnCgLhpYB1NhPYVloP2OjjGVHfI-7di0q8r1BvWffJBgk84en1VqPiJgUjKyTcOiYF9lPP8_rsthz6mU1Gk67Fr7Zjqsbn5wIWSwSY-ghQcbBvq8eIW1gfsScuS9bECG0Ksde6ZZTg_k_a8Rmx0JYYuFNePPkQVanJPLTGM6FVv-lrwl0OEIkPx5tIe77kreNWGc3TXeWh6dNA\"\n}",
+            "statusCode": 200
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "description": "Given the cancelPrescriptionReservation body data\n| sysVersion | sysVersion |",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:34.084Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "When the user performs a POST request on cancelPrescriptionReservation",
+      "duration": 1112,
+      "startTime": "2021-01-21T09:32:34.085Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 6,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/cancelPrescriptionReservation",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:35.196Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/cancelPrescriptionReservation",
+            "content": "{\n    \"sysVersion\": \"106,074,2997\",\n    \"internalRequest\": {\n        \"typ-nad\": \"S\",\n        \"ow-nad\": \"07\",\n        \"id-nad\": \"70061628\",\n        \"id-inst-nad\": \"Softlab ERP\",\n        \"id-tech-dokumentu\": \"fb86d79c-a92c-45f3-b4e8-0ea3be4e97de\",\n        \"nr-wersji\": \"18\",\n        \"data-gen\": \"2021-01-21T09:32:34.084\",\n        \"zlecenie\": {\n            \"nr-zlecenia-nfz\": \"T1-20-000101269-7\",\n            \"dane-wycofania\": {\n                \"data-wycofania\": \"2021-01-21\",\n                \"czesciowa-realizacja\": \"T\",\n                \"przyczyna\": \"Rezygnacja\",\n                \"mies-wycofania\": {\n                    \"mies-od\": \"2021-01\",\n                    \"lb-mies\": \"1\"\n                },\n                \"podmiot-wycofujacy\": {\n                    \"nazwa\": \"CONVATEC POLSKA SP. Z O.O.\",\n                    \"regon\": \"141437294\",\n                    \"swd\": {\n                        \"ow-nfz\": \"07\",\n                        \"kod-swd\": \"70061628\"\n                    }\n                }\n            }\n        }\n    }\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Transfer-Encoding: chunked\nContent-Type: application/json; charset\u003dutf-8\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:32:34 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"faultCode\": \"Client.InputException\",\n    \"faultMessage\": \"B\u0026#322;\u0026#281;dne dane wej\u0026#347;ciowe: B\u0026#322;\u0026#261;d danych wej\u0026#347;ciowych\"\n}",
+            "statusCode": 400
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then the status code reflects client side error 4xx",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:35.197Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-616-cancelprescriptionreservation",
+    "storyName": "ODT-616-CancelPrescriptionReservation",
+    "path": "prescriptionRealisation/ODT-616-CancelPrescriptionReservation.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-616-CancelPrescriptionReservation",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-616-CancelPrescriptionReservation"
+  },
+  "title": "Cancel prescription reservation without sysName",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation/ODT-616-CancelPrescriptionReservation",
+      "type": "feature",
+      "displayName": "ODT-616-CancelPrescriptionReservation"
+    },
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:33.456Z[Etc/UTC]",
+  "duration": 1743,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

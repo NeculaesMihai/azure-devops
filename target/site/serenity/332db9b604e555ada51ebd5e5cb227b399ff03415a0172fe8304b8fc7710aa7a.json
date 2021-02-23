@@ -1,0 +1,116 @@
+{
+  "name": "Get prescription realisation status request without subscription token",
+  "id": "odt-614-getprescriptionrealisationstatus;get-prescription-realisation-status-request-without-subscription-token",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 11,
+      "startTime": "2021-01-21T09:32:24.410Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 2,
+      "startTime": "2021-01-21T09:32:24.425Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the getPrescription body data\n| prescriptionId | prescriptionId |\n| id-tech-dokumentu-nfz | id-tech-dokumentu-nfz-realisation |\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:24.428Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the subscription token is empty",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:24.429Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "And the user performs a POST request on getPrescriptionRealisationStatus",
+      "duration": 241,
+      "startTime": "2021-01-21T09:32:24.429Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 6,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/getPrescriptionRealisationStatus",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:24.670Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/getPrescriptionRealisationStatus",
+            "content": "{\n    \"prescriptionID\": \"T1-20-000101269-7\",\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\"\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003d\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Content-Length: 143\nContent-Type: application/json\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nWWW-Authenticate: AzureApiManagementKey realm\u003d\"https://apim-odtapi-development.azure-api.net/function\",name\u003d\"Token\",type\u003d\"header\"\nDate: Thu, 21 Jan 2021 09:32:23 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"statusCode\": 401,\n    \"message\": \"Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription.\"\n}",
+            "statusCode": 401
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then the status code is 401",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:24.670Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-614-getprescriptionrealisationstatus",
+    "storyName": "ODT-614-GetPrescriptionRealisationStatus",
+    "path": "prescriptionRealisation/ODT-614-GetPrescriptionRealisationStatus.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-614-GetPrescriptionRealisationStatus",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-614-GetPrescriptionRealisationStatus"
+  },
+  "title": "Get prescription realisation status request without subscription token",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation/ODT-614-GetPrescriptionRealisationStatus",
+      "type": "feature",
+      "displayName": "ODT-614-GetPrescriptionRealisationStatus"
+    },
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:24.395Z[Etc/UTC]",
+  "duration": 277,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

@@ -1,0 +1,116 @@
+{
+  "name": "Cancel prescription realisation without subscription token",
+  "id": "odt-617-cancelprescriptionrealisation;cancel-prescription-realisation-without-subscription-token",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:37.956Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:37.957Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the cancelPrescriptionRealisation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 9,
+      "startTime": "2021-01-21T09:32:37.958Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the subscription token is empty",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:37.968Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "And the user performs a POST request on cancelPrescriptionRealisation",
+      "duration": 258,
+      "startTime": "2021-01-21T09:32:37.968Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 6,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/cancelPrescriptionRealisation",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:38.226Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/cancelPrescriptionRealisation",
+            "content": "{\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\",\n    \"internalRequest\": {\n        \"typ-nad\": \"S\",\n        \"ow-nad\": \"07\",\n        \"id-nad\": \"70061628\",\n        \"id-inst-nad\": \"Softlab ERP\",\n        \"id-tech-dokumentu\": \"2c4f3f50-cba2-4a2a-9920-4a1a9495ecf0\",\n        \"nr-wersji\": \"21\",\n        \"data-gen\": \"2021-01-21T09:32:37.959\",\n        \"zlecenie\": {\n            \"nr-zlecenia-nfz\": \"T1-20-000101269-7\",\n            \"dane-wycofania\": {\n                \"data-wycofania\": \"2021-01-21\",\n                \"czesciowa-realizacja\": \"T\",\n                \"przyczyna\": \"Rezygnacja\",\n                \"mies-wycofania\": {\n                    \"mies-od\": \"2021-01\",\n                    \"lb-mies\": \"1\"\n                },\n                \"podmiot-wycofujacy\": {\n                    \"nazwa\": \"CONVATEC POLSKA SP. Z O.O.\",\n                    \"regon\": \"141437294\",\n                    \"swd\": {\n                        \"ow-nfz\": \"07\",\n                        \"kod-swd\": \"70061628\"\n                    }\n                }\n            }\n        }\n    }\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003d\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Content-Length: 143\nContent-Type: application/json\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nWWW-Authenticate: AzureApiManagementKey realm\u003d\"https://apim-odtapi-development.azure-api.net/function\",name\u003d\"Token\",type\u003d\"header\"\nDate: Thu, 21 Jan 2021 09:32:37 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"statusCode\": 401,\n    \"message\": \"Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription.\"\n}",
+            "statusCode": 401
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then the status code is 401",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:38.226Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-617-cancelprescriptionrealisation",
+    "storyName": "ODT-617-CancelPrescriptionRealisation",
+    "path": "prescriptionRealisation/ODT-617-CancelPrescriptionRealisation.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-617-CancelPrescriptionRealisation",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-617-CancelPrescriptionRealisation"
+  },
+  "title": "Cancel prescription realisation without subscription token",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-617-CancelPrescriptionRealisation",
+      "type": "feature",
+      "displayName": "ODT-617-CancelPrescriptionRealisation"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:37.951Z[Etc/UTC]",
+  "duration": 277,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

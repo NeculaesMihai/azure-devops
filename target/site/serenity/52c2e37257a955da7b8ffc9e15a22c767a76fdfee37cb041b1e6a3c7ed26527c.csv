@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"ODT-610-SetPrescriptionReservation","Set prescription reservation request without subscription token","SUCCESS","2021-01-21T09:32:05.344Z[Etc/UTC]","0.0","0.42"
+"ODT-610-SetPrescriptionReservation","Set prescription reservation request without access token","SUCCESS","2021-01-21T09:32:05.781Z[Etc/UTC]","0.0","0.33"
+"ODT-610-SetPrescriptionReservation","Set prescription reservation request without system name","SUCCESS","2021-01-21T09:32:06.113Z[Etc/UTC]","0.0","1.42"
+"ODT-610-SetPrescriptionReservation","Set prescription reservation request without system version","SUCCESS","2021-01-21T09:32:07.538Z[Etc/UTC]","0.0","0.89"

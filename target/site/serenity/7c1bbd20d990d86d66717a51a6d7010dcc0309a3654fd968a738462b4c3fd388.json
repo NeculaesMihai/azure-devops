@@ -1,0 +1,130 @@
+{
+  "name": "Set prescription realisation request without system name",
+  "id": "odt-613-setprescriptionrealisation;set-prescription-realisation-request-without-system-name",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 3,
+      "startTime": "2021-01-21T09:32:20.106Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 423,
+      "startTime": "2021-01-21T09:32:20.110Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 3,
+          "description": "POST https://login.microsoftonline.com/56865670-71f8-4015-adb0-d807100feb84/oauth2/v2.0/token",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:20.526Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://login.microsoftonline.com/56865670-71f8-4015-adb0-d807100feb84/oauth2/v2.0/token",
+            "content": "",
+            "contentType": "application/x-www-form-urlencoded",
+            "requestHeaders": "Authorization\u003dBasic ZGE1NmQzYzktN2VmNS00OTllLWE0ZWQtOGEyYWEzZGEyZTBjOmwxRC1sZE9fbFR5Nl9KVjNKUllRLjRpLXA2N0NfX0otNzc\u003d\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/x-www-form-urlencoded; charset\u003dISO-8859-1",
+            "requestCookies": "",
+            "responseHeaders": "Cache-Control: no-store, no-cache\nPragma: no-cache\nContent-Type: application/json; charset\u003dutf-8\nExpires: -1\nStrict-Transport-Security: max-age\u003d31536000; includeSubDomains\nX-Content-Type-Options: nosniff\nP3P: CP\u003d\"DSP CUR OTPi IND OTRi ONL FIN\"\nx-ms-request-id: ce8ba8da-c3b9-4df2-9756-c60751f4c500\nx-ms-ests-server: 2.1.11397.13 - NEULR2 ProdSlices\nSet-Cookie: fpc\u003dAvd42i90hFxOnl-34ePYZSdYMYLGAQAAACNBm9cOAAAA; expires\u003dSat, 20-Feb-2021 09:32:20 GMT; path\u003d/; secure; HttpOnly; SameSite\u003dNone\nSet-Cookie: x-ms-gateway-slice\u003destsfd; path\u003d/; secure; samesite\u003dnone; httponly\nSet-Cookie: stsservicecookie\u003destsfd; path\u003d/; secure; samesite\u003dnone; httponly\nDate: Thu, 21 Jan 2021 09:32:19 GMT\nContent-Length: 1372",
+            "responseCookies": "fpc\u003dAvd42i90hFxOnl-34ePYZSdYMYLGAQAAACNBm9cOAAAA;Path\u003d/;Secure;HttpOnly;Expires\u003d2/20/21 9:32 AM\nx-ms-gateway-slice\u003destsfd;Path\u003d/;Secure;HttpOnly\nstsservicecookie\u003destsfd;Path\u003d/;Secure;HttpOnly",
+            "responseBody": "{\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599,\n    \"ext_expires_in\": 3599,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyIsImtpZCI6Im5PbzNaRHJPRFhFSzFqS1doWHNsSFJfS1hFZyJ9.eyJhdWQiOiJkMjI4NjA0ZC1mYmZjLTRkY2QtYmIxNy1lMzIzNDE3ZjM5NDQiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC81Njg2NTY3MC03MWY4LTQwMTUtYWRiMC1kODA3MTAwZmViODQvIiwiaWF0IjoxNjExMjIxMjQwLCJuYmYiOjE2MTEyMjEyNDAsImV4cCI6MTYxMTIyNTE0MCwiYWlvIjoiRTJKZ1lIQTBtbVlwdHZuenBUbVMvN1k5WFhEMEh3QT0iLCJhcHBpZCI6ImRhNTZkM2M5LTdlZjUtNDk5ZS1hNGVkLThhMmFhM2RhMmUwYyIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzU2ODY1NjcwLTcxZjgtNDAxNS1hZGIwLWQ4MDcxMDBmZWI4NC8iLCJvaWQiOiJjOWM5YmE1NS01Y2I0LTRiYzYtODRjOS1lMTk5NDkwNzRjNWQiLCJyaCI6IjAuQVNBQWNGYUdWdmh4RlVDdHNOZ0hFQV9yaE1uVFZ0cjFmcDVKcE8yS0txUGFMZ3dnQUFBLiIsInJvbGVzIjpbIlRlc3RpbmcuQXV0b21hdGlvbiJdLCJzdWIiOiJjOWM5YmE1NS01Y2I0LTRiYzYtODRjOS1lMTk5NDkwNzRjNWQiLCJ0aWQiOiI1Njg2NTY3MC03MWY4LTQwMTUtYWRiMC1kODA3MTAwZmViODQiLCJ1dGkiOiIycWlMenJuRDhrMlhWc1lIVWZURkFBIiwidmVyIjoiMS4wIn0.IxPbsnq6ZEhJ7hoV6adx2udgddtiUqq5PasF7ya4WDy9OUn6J7nZ2km0dHoct5bDPfFpzgO_Ma3OOYe3PNvL6XC6lSOTtImktbsYH4hbDwfLoZQG7qbFly63q_FfjkcAHLomR1SFpUQOvPo2Qh0p11i-RZ_Ey8TBjfMBHzQ_AMB3_izHZ3qhQc1tLewaX-Rx08DYFWhFiEoxY0gas7_VpUdyVVagOW9LH7smojt9litbdRWFFkdtqMeFa8_FUKUhycXnA5mS3UByhKeDIiTVNkEbMcFvEw-b0HN1lCXmD5-ygt2d1mhbCH-FDAy0yc-JO0KYycqPaiQVwjy656nZiA\"\n}",
+            "statusCode": 200
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "description": "Given the setPrescriptionRealisation body data\n| sysVersion | sysVersion |",
+      "duration": 2,
+      "startTime": "2021-01-21T09:32:20.533Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "When the user performs a POST request on setPrescriptionRealisation",
+      "duration": 903,
+      "startTime": "2021-01-21T09:32:20.536Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 6,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/setPrescriptionRealisation",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:21.439Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/setPrescriptionRealisation",
+            "content": "{\n    \"sysVersion\": \"106,074,2997\",\n    \"internalRequest\": {\n        \"typ-nad\": \"S\",\n        \"ow-nad\": \"07\",\n        \"id-nad\": \"70061628\",\n        \"id-inst-nad\": \"Softlab ERP\",\n        \"id-tech-dokumentu\": \"9bb1b565-de72-4b1c-8fa6-3ac174ffebe3\",\n        \"nr-wersji\": \"11\",\n        \"data-gen\": \"2021-01-21T09:32:20.534\",\n        \"zlecenie\": {\n            \"nr-zlecenia-nfz\": \"T1-20-000101269-7\",\n            \"kod-dostepu\": \"49071866678\",\n            \"dane-realizacji\": {\n                \"data-pobrania\": \"2021-01-21\",\n                \"czesciowa-realizacja\": \"T\",\n                \"mies-realizacji\": {\n                    \"mies-od\": \"2021-01\",\n                    \"lb-mies\": \"1\"\n                },\n                \"podmiot-realizacji-zlecenia\": {\n                    \"nazwa\": \"CONVATEC POLSKA SP. Z O.O.\",\n                    \"regon\": \"141437294\",\n                    \"swd\": {\n                        \"ow-nfz\": \"07\",\n                        \"kod-swd\": \"70061628\",\n                        \"umowa-z-nfz\": {\n                            \"nr-umowy\": \"070061628200001\"\n                        }\n                    }\n                },\n                \"miejsce-realizacji-zlecenia\": {\n                    \"kod-tech\": \"54103\",\n                    \"nazwa-miej\": \"SKLEP MEDYCZNY MEDICA HUMANA\"\n                },\n                \"dane-wyrobu\": {\n                    \"wydany-wyrob\": {\n                        \"kod-przedm\": \"P.099.PS\",\n                        \"kwota-refundacji\": \"160.0000\",\n                        \"kwota-doplaty\": \"0\",\n                        \"wydany-prod-handl\": {\n                            \"wytworca\": \"CONVATEC LIMITED\",\n                            \"model\": \"175611_STOMADRESS PLUS WORKI STOMAKAP 19MM\",\n                            \"nazwa-handlowa\": \"STOMADRESS PLUS WORKI STOMAKAP\",\n                            \"lb-wyd-sztuk\": \"10\",\n                            \"cena-det-szt\": \"16\",\n                            \"id-prod-handl\": \"1977298\"\n                        }\n                    }\n                },\n                \"potwierdzenie-wydania\": {\n                    \"data-wydania\": \"2021-01-21\",\n                    \"rodzaj-wydania\": \"O\",\n                    \"nazwisko\": \"Aper\",\n                    \"imie\": \"Artur\"\n                },\n                \"potwierdzenie-odbioru\": {\n                    \"data-odbioru\": \"2021-01-21\",\n                    \"rodzaj-odbioru\": \"O\",\n                    \"odbiorca-inna-osoba\": {\n                        \"typ-id-osoby\": \"P\",\n                        \"id-osoby\": \"45041144694\",\n                        \"nazwisko\": \"Zlotko\",\n                        \"imie\": \"Zygmunt\"\n                    }\n                }\n            }\n        }\n    }\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Transfer-Encoding: chunked\nContent-Type: application/json; charset\u003dutf-8\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:32:21 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"faultCode\": \"Client.InputException\",\n    \"faultMessage\": \"B\u0026#322;\u0026#281;dne dane wej\u0026#347;ciowe: B\u0026#322;\u0026#261;d danych wej\u0026#347;ciowych\"\n}",
+            "statusCode": 400
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then the status code reflects client side error 4xx",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:21.440Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-613-setprescriptionrealisation",
+    "storyName": "ODT-613-SetPrescriptionRealisation",
+    "path": "prescriptionRealisation/ODT-613-SetPrescriptionRealisation.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-613-SetPrescriptionRealisation",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-613-SetPrescriptionRealisation"
+  },
+  "title": "Set prescription realisation request without system name",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-613-SetPrescriptionRealisation",
+      "type": "feature",
+      "displayName": "ODT-613-SetPrescriptionRealisation"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:20.100Z[Etc/UTC]",
+  "duration": 1341,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

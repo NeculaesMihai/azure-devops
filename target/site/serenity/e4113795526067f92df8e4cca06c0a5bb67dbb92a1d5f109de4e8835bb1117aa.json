@@ -1,0 +1,116 @@
+{
+  "name": "Set prescription realisation request without subscription token",
+  "id": "odt-613-setprescriptionrealisation;set-prescription-realisation-request-without-subscription-token",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 7,
+      "startTime": "2021-01-21T09:32:19.421Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.428Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the setPrescriptionRealisation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 18,
+      "startTime": "2021-01-21T09:32:19.430Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the subscription token is empty",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.448Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "And the user performs a POST request on setPrescriptionRealisation",
+      "duration": 358,
+      "startTime": "2021-01-21T09:32:19.449Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 6,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/setPrescriptionRealisation",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:19.807Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/setPrescriptionRealisation",
+            "content": "{\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\",\n    \"internalRequest\": {\n        \"typ-nad\": \"S\",\n        \"ow-nad\": \"07\",\n        \"id-nad\": \"70061628\",\n        \"id-inst-nad\": \"Softlab ERP\",\n        \"id-tech-dokumentu\": \"1dc10be6-586a-4721-8ef7-b8a7707d2e81\",\n        \"nr-wersji\": \"9\",\n        \"data-gen\": \"2021-01-21T09:32:19.434\",\n        \"zlecenie\": {\n            \"nr-zlecenia-nfz\": \"T1-20-000101269-7\",\n            \"kod-dostepu\": \"49071866678\",\n            \"dane-realizacji\": {\n                \"data-pobrania\": \"2021-01-21\",\n                \"czesciowa-realizacja\": \"T\",\n                \"mies-realizacji\": {\n                    \"mies-od\": \"2021-01\",\n                    \"lb-mies\": \"1\"\n                },\n                \"podmiot-realizacji-zlecenia\": {\n                    \"nazwa\": \"CONVATEC POLSKA SP. Z O.O.\",\n                    \"regon\": \"141437294\",\n                    \"swd\": {\n                        \"ow-nfz\": \"07\",\n                        \"kod-swd\": \"70061628\",\n                        \"umowa-z-nfz\": {\n                            \"nr-umowy\": \"070061628200001\"\n                        }\n                    }\n                },\n                \"miejsce-realizacji-zlecenia\": {\n                    \"kod-tech\": \"54103\",\n                    \"nazwa-miej\": \"SKLEP MEDYCZNY MEDICA HUMANA\"\n                },\n                \"dane-wyrobu\": {\n                    \"wydany-wyrob\": {\n                        \"kod-przedm\": \"P.099.PS\",\n                        \"kwota-refundacji\": \"160.0000\",\n                        \"kwota-doplaty\": \"0\",\n                        \"wydany-prod-handl\": {\n                            \"wytworca\": \"CONVATEC LIMITED\",\n                            \"model\": \"175611_STOMADRESS PLUS WORKI STOMAKAP 19MM\",\n                            \"nazwa-handlowa\": \"STOMADRESS PLUS WORKI STOMAKAP\",\n                            \"lb-wyd-sztuk\": \"10\",\n                            \"cena-det-szt\": \"16\",\n                            \"id-prod-handl\": \"1977298\"\n                        }\n                    }\n                },\n                \"potwierdzenie-wydania\": {\n                    \"data-wydania\": \"2021-01-21\",\n                    \"rodzaj-wydania\": \"O\",\n                    \"nazwisko\": \"Aper\",\n                    \"imie\": \"Artur\"\n                },\n                \"potwierdzenie-odbioru\": {\n                    \"data-odbioru\": \"2021-01-21\",\n                    \"rodzaj-odbioru\": \"O\",\n                    \"odbiorca-inna-osoba\": {\n                        \"typ-id-osoby\": \"P\",\n                        \"id-osoby\": \"45041144694\",\n                        \"nazwisko\": \"Zlotko\",\n                        \"imie\": \"Zygmunt\"\n                    }\n                }\n            }\n        }\n    }\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003d\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Content-Length: 143\nContent-Type: application/json\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nWWW-Authenticate: AzureApiManagementKey realm\u003d\"https://apim-odtapi-development.azure-api.net/function\",name\u003d\"Token\",type\u003d\"header\"\nDate: Thu, 21 Jan 2021 09:32:18 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"statusCode\": 401,\n    \"message\": \"Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription.\"\n}",
+            "statusCode": 401
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "description": "Then the status code is 401",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.807Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-613-setprescriptionrealisation",
+    "storyName": "ODT-613-SetPrescriptionRealisation",
+    "path": "prescriptionRealisation/ODT-613-SetPrescriptionRealisation.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-613-SetPrescriptionRealisation",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-613-SetPrescriptionRealisation"
+  },
+  "title": "Set prescription realisation request without subscription token",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-613-SetPrescriptionRealisation",
+      "type": "feature",
+      "displayName": "ODT-613-SetPrescriptionRealisation"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:19.417Z[Etc/UTC]",
+  "duration": 398,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

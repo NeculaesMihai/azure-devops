@@ -1,0 +1,210 @@
+{
+  "name": "Successful Prescription Reservation",
+  "id": "odt-611-getprescriptionreservationstatus;successful-prescription-reservation",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:08.434Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:08.435Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the setPrescriptionReservation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 6,
+      "startTime": "2021-01-21T09:32:08.435Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the user performs a POST request on setPrescriptionReservation",
+      "duration": 1615,
+      "startTime": "2021-01-21T09:32:08.441Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 5,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/setPrescriptionReservation",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:10.055Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/setPrescriptionReservation",
+            "content": "{\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\",\n    \"internalRequest\": {\n        \"typ-nad\": \"S\",\n        \"ow-nad\": \"07\",\n        \"id-nad\": \"70061628\",\n        \"id-inst-nad\": \"Softlab ERP\",\n        \"id-tech-dokumentu\": \"201b1105-4e31-4886-a37d-366705b1b21e\",\n        \"nr-wersji\": \"6\",\n        \"data-gen\": \"2021-01-21T09:32:08.437\",\n        \"zlecenie\": {\n            \"nr-zlecenia-nfz\": \"T1-20-000101269-7\",\n            \"kod-dostepu\": \"49071866678\",\n            \"dane-pobrania\": {\n                \"data-pobrania\": \"2021-01-21\",\n                \"czesciowa-realizacja\": \"T\",\n                \"mies-realizacji\": {\n                    \"mies-od\": \"2021-01\",\n                    \"lb-mies\": \"1\"\n                },\n                \"podmiot-realizacji-zlecenia\": {\n                    \"nazwa\": \"CONVATEC POLSKA SP. Z O.O.\",\n                    \"regon\": \"141437294\",\n                    \"swd\": {\n                        \"ow-nfz\": \"07\",\n                        \"kod-swd\": \"70061628\",\n                        \"umowa-z-nfz\": {\n                            \"nr-umowy\": \"070061628200001\"\n                        }\n                    }\n                },\n                \"miejsce-realizacji-zlecenia\": {\n                    \"kod-tech-miejsca\": \"54103\",\n                    \"nazwa-miej\": \"SKLEP MEDYCZNY MEDICA HUMANA\",\n                    \"adres\": {\n                        \"kod-poczt\": \"00-854\",\n                        \"miejscowosc\": \"Warszawa\",\n                        \"ulica\": \"KROCHMALNA\",\n                        \"nr-domu\": \"32A\",\n                        \"kod-kraju\": \"PL\"\n                    }\n                },\n                \"brak-dod-upr\": \"1\",\n                \"potw-uprawnien-realizator\": {\n                    \"tytul-uprawn\": \"U\",\n                    \"dokument\": {\n                        \"rodzaj\": \"58\"\n                    }\n                }\n            }\n        }\n    }\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Content-Length: 123\nContent-Type: application/json; charset\u003dutf-8\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:32:09 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"faultCode\": \" 1.[20007]\",\n    \"faultMessage\": \" 1.[Przekazana umowa nie obowiązuje w dniu przyjęcia zlecenia do realizacji.]\"\n}",
+            "statusCode": 400
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "description": "Then the status code is 200",
+      "duration": 3,
+      "startTime": "2021-01-21T09:32:10.056Z[Etc/UTC]",
+      "exception": {
+        "errorType": "java.lang.AssertionError",
+        "message": "Unexpected status code was found: 400 expected:\u003c200\u003e but was:\u003c400\u003e",
+        "stackTrace": [
+          {
+            "declaringClass": "validations.CommonValidations",
+            "methodName": "validateResponseStatusCode",
+            "fileName": "CommonValidations.java",
+            "lineNumber": 15
+          },
+          {
+            "declaringClass": "✽",
+            "methodName": "the status code is 200",
+            "fileName": "src/test/resources/features/prescriptionRealisation/ODT-611-GetPrescriptionReservationStatus.feature",
+            "lineNumber": 12
+          }
+        ]
+      },
+      "result": "FAILURE",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 7,
+      "description": "And response body is matching JSON schema setPrescriptionReservation",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:10.059Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 8,
+      "description": "And the documentTechIdNfzReservation is saved",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:10.060Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 9,
+      "description": "And wait 5 seconds for validation",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:10.061Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 10,
+      "description": "Given the cancelPrescriptionReservation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:10.061Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 11,
+      "description": "When the user performs a POST request on cancelPrescriptionReservation",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:10.062Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 12,
+      "description": "Then the status code is 200",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:10.063Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 13,
+      "description": "And response body is matching JSON schema cancelPrescriptionReservation",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:10.063Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-611-getprescriptionreservationstatus",
+    "storyName": "ODT-611-GetPrescriptionReservationStatus",
+    "path": "prescriptionRealisation/ODT-611-GetPrescriptionReservationStatus.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-611-GetPrescriptionReservationStatus",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-611-GetPrescriptionReservationStatus"
+  },
+  "title": "Successful Prescription Reservation",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-611-GetPrescriptionReservationStatus",
+      "type": "feature",
+      "displayName": "ODT-611-GetPrescriptionReservationStatus"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:08.430Z[Etc/UTC]",
+  "duration": 1636,
+  "testFailureCause": {
+    "errorType": "java.lang.AssertionError",
+    "message": "Unexpected status code was found: 400 expected:\u003c200\u003e but was:\u003c400\u003e",
+    "stackTrace": [
+      {
+        "declaringClass": "validations.CommonValidations",
+        "methodName": "validateResponseStatusCode",
+        "fileName": "CommonValidations.java",
+        "lineNumber": 15
+      },
+      {
+        "declaringClass": "✽",
+        "methodName": "the status code is 200",
+        "fileName": "src/test/resources/features/prescriptionRealisation/ODT-611-GetPrescriptionReservationStatus.feature",
+        "lineNumber": 12
+      }
+    ]
+  },
+  "testFailureClassname": "java.lang.AssertionError",
+  "testFailureMessage": "Unexpected status code was found: 400 expected:\u003c200\u003e but was:\u003c400\u003e",
+  "testFailureSummary": "FAILURE;java.lang.AssertionError;Unexpected status code was found: 400 expected:\u003c200\u003e but was:\u003c400\u003e;CommonValidations.java",
+  "projectKey": "",
+  "annotatedResult": "FAILURE",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "FAILURE"
+}

@@ -1,0 +1,116 @@
+{
+  "name": "Successful prescription details retrieval",
+  "id": "odt-609-getprescriptiondetails;successful-prescription-details-retrieval",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 2,
+      "startTime": "2021-01-21T09:31:58.057Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 0,
+      "startTime": "2021-01-21T09:31:58.060Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the getPrescription body data\n| prescriptionId | prescriptionId |\n| accessCode | accessCode |\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 2,
+      "startTime": "2021-01-21T09:31:58.060Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the user performs a POST request on getPrescriptionDetails",
+      "duration": 998,
+      "startTime": "2021-01-21T09:31:58.062Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 5,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/getPrescriptionDetails",
+          "duration": 0,
+          "startTime": "2021-01-21T09:31:59.057Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/getPrescriptionDetails",
+            "content": "{\n    \"prescriptionID\": \"T1-20-000101269-7\",\n    \"accessCode\": \"49071866678\",\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\"\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Transfer-Encoding: chunked\nContent-Type: application/json; charset\u003dutf-8\nContent-Encoding: gzip\nVary: Accept-Encoding\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:31:58 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"nazwa-sys\": \"System eZWM\",\n    \"wersja-sys\": \"1.80\",\n    \"id-trans\": \"ed0f4431-455b-43a6-b8dd-f52f96e1665a\",\n    \"data-gen\": \"2020-12-10T12:01:46\",\n    \"nr-zlecenia-nfz\": \"T1-20-000101269-7\",\n    \"dokument-info\": {\n        \"id-tech-dokumentu-nfz\": \"66435800000000000004404917\"\n    },\n    \"dokument-zpo\": {\n        \"typ-nad\": \"S\",\n        \"ow-nad\": \"07\",\n        \"id-nad\": \"70061628\",\n        \"id-inst-nad\": \"KS:AP-ZZ\",\n        \"id-tech-dokumentu\": \"89e8622c-11a1-4eeb-9321-0aeb796cd6f6\",\n        \"nr-wersji\": \"1\",\n        \"data-gen\": \"2020-12-10T12:01:45\",\n        \"zlecenie\": {\n            \"miejsce-wystawienia-zlecenia\": {\n                \"nazwa\": \"CONVATEC POLSKA SP. Z O.O.\",\n                \"regon\": \"141437294\",\n                \"swd\": {\n                    \"ow-nfz\": \"07\",\n                    \"kod-swd\": \"70061628\"\n                },\n                \"adres\": {\n                    \"kod-poczt\": \"00-854\",\n                    \"miejscowosc\": \"WARSZAWA\",\n                    \"ulica\": \"KROCHMALNA\",\n                    \"nr-domu\": \"32A\",\n                    \"nr-lokalu\": null\n                }\n            },\n            \"pacjent\": {\n                \"potw-uprawnien\": {\n                    \"oswiadczenie\": null,\n                    \"tytul-uprawn\": \"U\"\n                },\n                \"upraw-dod\": null,\n                \"typ-id-osoby\": \"P\",\n                \"id-osoby\": \"49071866678\",\n                \"nazwisko\": \"Janowicz\",\n                \"imie\": \"Jo\",\n                \"data-ur\": \"1949-07-18\",\n                \"plec\": \"1\"\n            },\n            \"okreslenie-wyrob-med\": {\n                \"wyrob-med\": {\n                    \"kod-mz\": \"P.99\",\n                    \"kod-przedm\": \"P.099.PS\",\n                    \"nazwa-przedm\": \"Worki stomijne samoprzylepne jednorazowego użycia w ilości do 90 sztuk w systemie jednoczęściowym lub w równowartości ich kosztu worki i płytki w systemie dwuczęściowym lub inny sprzęt stomijny: zestawy irygacyjne, nocne zbiorniki na mocz, pasty, pudry oraz paski, półpierścienie, pierścienie o właściwościach uszczelniających lub gojących, produkty do usuwania sprzętu stomijnego lub do ochrony skóry wokół stomii\",\n                    \"stomia\": {\n                        \"stomia-liczba-przetok\": \"1\",\n                        \"rodzaj\": \"S\"\n                    },\n                    \"rodzaj-zaopatrzenia\": {\n                        \"zaopatrzenie-comiesieczne\": {\n                            \"sposob-ordynacji\": \"P\",\n                            \"lb-szt-na-mies\": \"1\",\n                            \"okres-zaop-od\": \"2020-12\",\n                            \"okres-zaop-dlug\": \"12\"\n                        }\n                    },\n                    \"uzasad-zaopatrz\": {\n                        \"kod-icd10\": \"A00.9\",\n                        \"kryterium-przyznania\": {\n                            \"kod-kryterium\": \"82\",\n                            \"nazwa-kryterium\": \"przetoka ślinowa\"\n                        }\n                    }\n                }\n            },\n            \"dane-dt-wystawienia\": {\n                \"data-wystawienia\": \"2020-12-10\",\n                \"osoba-uprawniona\": {\n                    \"typ-pers-zlec\": \"11\",\n                    \"id-zlec\": \"7040454\",\n                    \"nazwisko\": \"Faiser\",\n                    \"imie\": \"Frederyk\"\n                }\n            }\n        }\n    }\n}",
+            "statusCode": 200
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "description": "Then the status code is 200",
+      "duration": 1,
+      "startTime": "2021-01-21T09:31:59.060Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 7,
+      "description": "And response body is matching JSON schema getPrescriptionDetails",
+      "duration": 32,
+      "startTime": "2021-01-21T09:31:59.062Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-609-getprescriptiondetails",
+    "storyName": "ODT-609-GetPrescriptionDetails",
+    "path": "prescriptionRealisation/ODT-609-GetPrescriptionDetails.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-609-GetPrescriptionDetails",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-609-GetPrescriptionDetails"
+  },
+  "title": "Successful prescription details retrieval",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-609-GetPrescriptionDetails",
+      "type": "feature",
+      "displayName": "ODT-609-GetPrescriptionDetails"
+    }
+  ],
+  "startTime": "2021-01-21T09:31:58.044Z[Etc/UTC]",
+  "duration": 1051,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

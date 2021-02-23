@@ -1,0 +1,408 @@
+{
+  "name": "Successful prescription realisation",
+  "id": "odt-613-setprescriptionrealisation;successful-prescription-realisation",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 2,
+      "startTime": "2021-01-21T09:32:18.232Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:18.234Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the setPrescriptionReservation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 3,
+      "startTime": "2021-01-21T09:32:18.235Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the user performs a POST request on setPrescriptionReservation",
+      "duration": 1115,
+      "startTime": "2021-01-21T09:32:18.238Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 5,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/setPrescriptionReservation",
+          "duration": 0,
+          "startTime": "2021-01-21T09:32:19.352Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/setPrescriptionReservation",
+            "content": "{\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\",\n    \"internalRequest\": {\n        \"typ-nad\": \"S\",\n        \"ow-nad\": \"07\",\n        \"id-nad\": \"70061628\",\n        \"id-inst-nad\": \"Softlab ERP\",\n        \"id-tech-dokumentu\": \"94a2958f-21ef-4e64-8336-7c288a24e2d4\",\n        \"nr-wersji\": \"8\",\n        \"data-gen\": \"2021-01-21T09:32:18.236\",\n        \"zlecenie\": {\n            \"nr-zlecenia-nfz\": \"T1-20-000101269-7\",\n            \"kod-dostepu\": \"49071866678\",\n            \"dane-pobrania\": {\n                \"data-pobrania\": \"2021-01-21\",\n                \"czesciowa-realizacja\": \"T\",\n                \"mies-realizacji\": {\n                    \"mies-od\": \"2021-01\",\n                    \"lb-mies\": \"1\"\n                },\n                \"podmiot-realizacji-zlecenia\": {\n                    \"nazwa\": \"CONVATEC POLSKA SP. Z O.O.\",\n                    \"regon\": \"141437294\",\n                    \"swd\": {\n                        \"ow-nfz\": \"07\",\n                        \"kod-swd\": \"70061628\",\n                        \"umowa-z-nfz\": {\n                            \"nr-umowy\": \"070061628200001\"\n                        }\n                    }\n                },\n                \"miejsce-realizacji-zlecenia\": {\n                    \"kod-tech-miejsca\": \"54103\",\n                    \"nazwa-miej\": \"SKLEP MEDYCZNY MEDICA HUMANA\",\n                    \"adres\": {\n                        \"kod-poczt\": \"00-854\",\n                        \"miejscowosc\": \"Warszawa\",\n                        \"ulica\": \"KROCHMALNA\",\n                        \"nr-domu\": \"32A\",\n                        \"kod-kraju\": \"PL\"\n                    }\n                },\n                \"brak-dod-upr\": \"1\",\n                \"potw-uprawnien-realizator\": {\n                    \"tytul-uprawn\": \"U\",\n                    \"dokument\": {\n                        \"rodzaj\": \"58\"\n                    }\n                }\n            }\n        }\n    }\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Transfer-Encoding: chunked\nContent-Type: application/json; charset\u003dutf-8\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:32:18 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"faultCode\": \" 1.[20007]\",\n    \"faultMessage\": \" 1.[Przekazana umowa nie obowiązuje w dniu przyjęcia zlecenia do realizacji.]\"\n}",
+            "statusCode": 400
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "description": "Then the status code is 200",
+      "duration": 2,
+      "startTime": "2021-01-21T09:32:19.353Z[Etc/UTC]",
+      "exception": {
+        "errorType": "java.lang.AssertionError",
+        "message": "Unexpected status code was found: 400 expected:\u003c200\u003e but was:\u003c400\u003e",
+        "stackTrace": [
+          {
+            "declaringClass": "validations.CommonValidations",
+            "methodName": "validateResponseStatusCode",
+            "fileName": "CommonValidations.java",
+            "lineNumber": 15
+          },
+          {
+            "declaringClass": "✽",
+            "methodName": "the status code is 200",
+            "fileName": "src/test/resources/features/prescriptionRealisation/ODT-613-SetPrescriptionRealisation.feature",
+            "lineNumber": 12
+          }
+        ]
+      },
+      "result": "FAILURE",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 7,
+      "description": "And response body is matching JSON schema setPrescriptionReservation",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.356Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 8,
+      "description": "And the documentTechIdNfzReservation is saved",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.356Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 9,
+      "description": "And wait 5 seconds for validation",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.357Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 10,
+      "description": "Given the setPrescriptionRealisation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.358Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 11,
+      "description": "When the user performs a POST request on setPrescriptionRealisation",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.358Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 12,
+      "description": "Then the status code is 200",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.359Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 13,
+      "description": "And response body is matching JSON schema setPrescriptionRealisation",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.360Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 14,
+      "description": "And the documentTechIdNfzRealisation is saved",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.360Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 15,
+      "description": "And wait 5 seconds for validation",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.361Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 16,
+      "description": "Given the getPrescription body data\n| prescriptionId | prescriptionId |\n| accessCode | accessCode |\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.362Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 17,
+      "description": "When the user performs a POST request on getPrescriptionStatus",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.362Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 18,
+      "description": "Then the status code is 200",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.363Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 19,
+      "description": "Given the getPrescription body data\n| prescriptionId | prescriptionId |\n| id-tech-dokumentu-nfz | id-tech-dokumentu-nfz-realisation |\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.375Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 20,
+      "description": "When the user performs a POST request on getPrescriptionRealisationStatus",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.376Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 21,
+      "description": "Then the status code is 200",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.377Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 22,
+      "description": "And response body is matching JSON schema getPrescriptionRealisationStatus",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.377Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 23,
+      "description": "Given the getPrescription body data\n| prescriptionId | prescriptionId |\n| id-tech-dokumentu-nfz | id-tech-dokumentu-nfz-realisation |\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.378Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 24,
+      "description": "When the user performs a POST request on getPrescriptionRealisationResult",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.378Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 25,
+      "description": "Then the status code is 200",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.379Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 26,
+      "description": "And response body is matching JSON schema getPrescriptionRealisationResult",
+      "duration": 3,
+      "startTime": "2021-01-21T09:32:19.380Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 27,
+      "description": "Given the cancelPrescriptionRealisation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 4,
+      "startTime": "2021-01-21T09:32:19.386Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 28,
+      "description": "When the user performs a POST request on cancelPrescriptionRealisation",
+      "duration": 2,
+      "startTime": "2021-01-21T09:32:19.391Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 29,
+      "description": "Then the status code is 200",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.393Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 30,
+      "description": "And response body is matching JSON schema cancelPrescriptionRealisation",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.395Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 31,
+      "description": "And wait 5 seconds for validation",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.395Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 32,
+      "description": "Given the cancelPrescriptionReservation body data\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.396Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 33,
+      "description": "When the user performs a POST request on cancelPrescriptionReservation",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.397Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 34,
+      "description": "Then the status code is 200",
+      "duration": 1,
+      "startTime": "2021-01-21T09:32:19.397Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 35,
+      "description": "And response body is matching JSON schema cancelPrescriptionReservation",
+      "duration": 0,
+      "startTime": "2021-01-21T09:32:19.398Z[Etc/UTC]",
+      "result": "SKIPPED",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-613-setprescriptionrealisation",
+    "storyName": "ODT-613-SetPrescriptionRealisation",
+    "path": "prescriptionRealisation/ODT-613-SetPrescriptionRealisation.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-613-SetPrescriptionRealisation",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-613-SetPrescriptionRealisation"
+  },
+  "title": "Successful prescription realisation",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-613-SetPrescriptionRealisation",
+      "type": "feature",
+      "displayName": "ODT-613-SetPrescriptionRealisation"
+    }
+  ],
+  "startTime": "2021-01-21T09:32:18.229Z[Etc/UTC]",
+  "duration": 1181,
+  "testFailureCause": {
+    "errorType": "java.lang.AssertionError",
+    "message": "Unexpected status code was found: 400 expected:\u003c200\u003e but was:\u003c400\u003e",
+    "stackTrace": [
+      {
+        "declaringClass": "validations.CommonValidations",
+        "methodName": "validateResponseStatusCode",
+        "fileName": "CommonValidations.java",
+        "lineNumber": 15
+      },
+      {
+        "declaringClass": "✽",
+        "methodName": "the status code is 200",
+        "fileName": "src/test/resources/features/prescriptionRealisation/ODT-613-SetPrescriptionRealisation.feature",
+        "lineNumber": 12
+      }
+    ]
+  },
+  "testFailureClassname": "java.lang.AssertionError",
+  "testFailureMessage": "Unexpected status code was found: 400 expected:\u003c200\u003e but was:\u003c400\u003e",
+  "testFailureSummary": "FAILURE;java.lang.AssertionError;Unexpected status code was found: 400 expected:\u003c200\u003e but was:\u003c400\u003e;CommonValidations.java",
+  "projectKey": "",
+  "annotatedResult": "FAILURE",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "FAILURE"
+}

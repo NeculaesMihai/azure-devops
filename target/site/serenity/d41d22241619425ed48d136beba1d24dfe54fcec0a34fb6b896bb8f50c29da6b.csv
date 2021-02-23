@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"ODT-617-CancelPrescriptionRealisation","Cancel prescription realisation without subscription token","SUCCESS","2021-01-21T09:32:37.951Z[Etc/UTC]","0.0","0.28"
+"ODT-617-CancelPrescriptionRealisation","Cancel prescription realisation without access token","SUCCESS","2021-01-21T09:32:38.229Z[Etc/UTC]","0.0","0.25"
+"ODT-617-CancelPrescriptionRealisation","Cancel prescription realisation without sysName","SUCCESS","2021-01-21T09:32:38.485Z[Etc/UTC]","0.0","1.35"
+"ODT-617-CancelPrescriptionRealisation","Cancel prescription realisation without sysVersion","SUCCESS","2021-01-21T09:32:39.833Z[Etc/UTC]","0.0","0.91"

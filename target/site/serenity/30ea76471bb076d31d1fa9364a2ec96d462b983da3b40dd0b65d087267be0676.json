@@ -1,0 +1,107 @@
+{
+  "name": "Successful prescription status retrieval using patient date of birth as access code",
+  "id": "odt-608-getprescriptionstatus;successful-prescription-status-retrieval-using-patient-date-of-birth-as-access-code",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the subscriptionToken is set",
+      "duration": 22,
+      "startTime": "2021-01-21T09:31:49.475Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And the accessToken is set",
+      "duration": 1,
+      "startTime": "2021-01-21T09:31:49.498Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Given the getPrescription body data\n| prescriptionId | prescriptionIdDoB |\n| accessCode | accessCodeDoB |\n| sysName | sysName |\n| sysVersion | sysVersion |",
+      "duration": 3,
+      "startTime": "2021-01-21T09:31:49.508Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "When the user performs a POST request on getPrescriptionStatus",
+      "duration": 920,
+      "startTime": "2021-01-21T09:31:49.515Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 5,
+          "description": "POST https://apim-odtapi-development.azure-api.net/function/getPrescriptionStatus",
+          "duration": 0,
+          "startTime": "2021-01-21T09:31:50.434Z[Etc/UTC]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://apim-odtapi-development.azure-api.net/function/getPrescriptionStatus",
+            "content": "{\n    \"prescriptionID\": \"T0-20-000902867-1\",\n    \"accessCode\": \"20161227\",\n    \"sysName\": \"Softlab ERP\",\n    \"sysVersion\": \"106,074,2997\"\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Token\u003dd60698a7199e411bb4be7102adce4ece\n\t\t\t\tAccept\u003d*/*\n\t\t\t\tContent-Type\u003dapplication/json; charset\u003dUTF-8",
+            "requestCookies": "",
+            "responseHeaders": "Transfer-Encoding: chunked\nContent-Type: application/json; charset\u003dutf-8\nContent-Encoding: gzip\nVary: Accept-Encoding\nRequest-Context: appId\u003dcid-v1:5e4bcd8c-0ae1-4eee-831f-90e7edd02207\nDate: Thu, 21 Jan 2021 09:31:50 GMT",
+            "responseCookies": "",
+            "responseBody": "{\n    \"nazwa-sys\": \"System eZWM\",\n    \"wersja-sys\": \"1.80\",\n    \"id-trans\": \"97e1e17a-b06c-4174-8f96-2bd0855bbfb1\",\n    \"data-gen\": \"2021-01-21T10:31:49\",\n    \"nr-zlecenia-nfz\": \"T0-20-000902867-1\",\n    \"status-zlecenia\": {\n        \"status\": \"N\",\n        \"status-realizacji\": [\n            \n        ]\n    }\n}",
+            "statusCode": 200
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "description": "Then the status code is 200",
+      "duration": 2,
+      "startTime": "2021-01-21T09:31:50.435Z[Etc/UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "odt-608-getprescriptionstatus",
+    "storyName": "ODT-608-GetPrescriptionStatus",
+    "path": "prescriptionRealisation/ODT-608-GetPrescriptionStatus.feature",
+    "type": "feature"
+  },
+  "featureTag": {
+    "name": "Prescription realisation/ODT-608-GetPrescriptionStatus",
+    "type": "feature",
+    "displayName": "Prescription realisation/ODT-608-GetPrescriptionStatus"
+  },
+  "title": "Successful prescription status retrieval using patient date of birth as access code",
+  "backgroundTitle": "Set credentials",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "Prescription realisation",
+      "type": "capability",
+      "displayName": "Prescription realisation"
+    },
+    {
+      "name": "Prescription realisation/ODT-608-GetPrescriptionStatus",
+      "type": "feature",
+      "displayName": "ODT-608-GetPrescriptionStatus"
+    }
+  ],
+  "startTime": "2021-01-21T09:31:49.444Z[Etc/UTC]",
+  "duration": 1004,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}
