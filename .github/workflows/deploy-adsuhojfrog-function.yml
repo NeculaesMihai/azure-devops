@@ -41,6 +41,12 @@ jobs:
         npm install
         npm run build --if-present
         npm run test --if-present
+        
+        # Create archive
+        npm prune --production
+        Get-ChildItem $pwd | Compress-Archive -Destination .\backend.zip
+        jfrog rt u demo .\backend.zip
+        
         popd
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
