@@ -27,32 +27,43 @@ jobs:
       uses: jfrog/setup-jfrog-cli@v1
       env:
         JF_ARTIFACTORY_1: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
-    
-    - run: |
-        #jfrog rt dl demo-npm-local/
-        #jfrog rt u Function-AdsuhojFROG/ demo-npm-local/
       
     - name: Setup Node ${{ env.NODE_VERSION }} Environment
       uses: actions/setup-node@v1
       with:
         node-version: ${{ env.NODE_VERSION }}
 
-    - name: 'Resolve Project Dependencies Using Npm'
+    - name: 'npm'
       shell: pwsh
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         npm install
         npm run build --if-present
-        jfrog rt dl demo-npm-local/
-        jfrog rt u . demo-npm-local/
-        jfrog rt u . demo-npm-local/jfrog-function-1.0.0
         npm run test --if-present 
         popd
-    - name: 'Run Azure Functions Action'
-      uses: Azure/functions-action@v1
-      id: fa
-      with:
-        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-        publish-profile: ${{ secrets.ADSUHOJFROG_FUNCTIONAPP_PUBLISH_PROFILE }}
+
+    # 2. Change these variables for your configuration:
+    - name: 'Upload using NPM'
+      shell: pwsh
+      run: |
+        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        # jfrog rt dl demo-npm-local/
+        # jfrog rt u . demo-npm-local/
+        # jfrog rt u . demo-npm-local/jfrog-function-1.0.0
+        popd
+   
+   - name: 'Upload using jFrog'
+      shell: pwsh
+      run: |
+        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        jfrog rt u . demo-npm
+        popd
+
+    # - name: 'Run Azure Functions Action'
+    #   uses: Azure/functions-action@v1
+    #   id: fa
+    #   with:
+    #     app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+    #     package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+    #     publish-profile: ${{ secrets.ADSUHOJFROG_FUNCTIONAPP_PUBLISH_PROFILE }}
         
