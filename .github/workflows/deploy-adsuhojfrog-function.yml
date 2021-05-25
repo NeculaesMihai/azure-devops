@@ -53,11 +53,8 @@ jobs:
         popd
    
     - name: 'Upload using jFrog'
-      shell: pwsh
       run: |
-        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-        jfrog rt u . demo-npm-local/
-        popd
+        jfrog rt u ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }} demo-npm-local/
 
     # - name: 'Run Azure Functions Action'
     #   uses: Azure/functions-action@v1
