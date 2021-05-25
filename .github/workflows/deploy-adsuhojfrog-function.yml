@@ -37,16 +37,9 @@ jobs:
       shell: pwsh
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-        jfrog rt ping
         npm install
         npm run build --if-present
-        npm run test --if-present
-        
-        # Create archive
-        npm prune --production
-        Get-ChildItem $pwd | Compress-Archive -Destination .\backend.zip
-        jfrog rt u ".\backend.zip" adsuho/demo
-        
+        npm run test --if-present  
         popd
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
