@@ -1,4 +1,4 @@
-name: AdsuhoWin deploy
+name: Adsuho jFrog deploy
 
 on:
   [push]
