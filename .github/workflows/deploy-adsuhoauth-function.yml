@@ -1,7 +1,9 @@
 name: AdsuhoAuth deploy
 
 on:
-  [push]
+  push:
+    paths:
+      - Function-AdsuhoAuth/**
 
 # CONFIGURATION
 # For help, go to https://github.com/Azure/Actions
