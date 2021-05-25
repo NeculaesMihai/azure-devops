@@ -30,7 +30,7 @@ jobs:
     
     - run: |
         jfrog rt dl demo-npm-local/
-        # jfrog rt u aether artifacts/
+        jfrog rt u . demo-npm-local/
         # jfrog rt bp  
       
     - name: Setup Node ${{ env.NODE_VERSION }} Environment
