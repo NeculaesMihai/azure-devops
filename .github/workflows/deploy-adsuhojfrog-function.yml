@@ -54,7 +54,7 @@ jobs:
    
     - name: 'Upload using jFrog'
       run: |
-        jfrog rt u ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }} demo-npm-local/
+        jfrog rt u ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }} demo-npm-local/v1.0.0.0001
 
     # - name: 'Run Azure Functions Action'
     #   uses: Azure/functions-action@v1
