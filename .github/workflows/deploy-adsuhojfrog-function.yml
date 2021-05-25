@@ -45,7 +45,7 @@ jobs:
         # Create archive
         npm prune --production
         Get-ChildItem $pwd | Compress-Archive -Destination .\backend.zip
-        jfrog rt u .\backend.zip
+        jfrog rt u ".\backend.zip" adsuho/demo
         
         popd
     - name: 'Run Azure Functions Action'
