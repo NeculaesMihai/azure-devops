@@ -52,7 +52,7 @@ jobs:
         # jfrog rt u . demo-npm-local/jfrog-function-1.0.0
         popd
    
-   - name: 'Upload using jFrog'
+    - name: 'Upload using jFrog'
       shell: pwsh
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
