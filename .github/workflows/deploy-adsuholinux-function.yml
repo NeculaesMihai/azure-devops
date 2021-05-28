@@ -32,13 +32,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ env.NODE_VERSION }}
-    - name: 'Resolve Project Dependencies Using Pip'
-      shell: bash
-      run: |
-        pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt --target=".python_packages/lib/site-packages"
-        popd
+    # - name: 'Resolve Project Dependencies Using Pip'
+    #   shell: bash
+    #   run: |
+    #     pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+    #     python -m pip install --upgrade pip
+    #     pip install -r requirements.txt --target=".python_packages/lib/site-packages"
+    #     popd
     - name: 'npm'
       shell: pwsh
       run: |
@@ -69,4 +69,5 @@ jobs:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
         publish-profile: ${{ secrets.ADSUHOLINUX_FUNCTIONAPP_PUBLISH_PROFILE }}
-        
+        scm-do-build-during-deployment: true
+        enable-oryx-build: true    
