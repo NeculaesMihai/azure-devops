@@ -1,7 +1,9 @@
 name: Adsuho jFrog deploy
 
 on:
-  [push]
+  push:
+    paths:
+      - Function-AdsuhoJfrog/**
 
 # CONFIGURATION
 # For help, go to https://github.com/Azure/Actions
